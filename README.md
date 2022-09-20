@@ -1,3 +1,10 @@
+# Mom Data
+## Budget Analysing Tool for the Whole Family
+
+The application creates and populates a database from user input
+It's possible to sort data by headings (and filter by budget)
+Budgeting suggestions are given based on headings chosen
+
 <img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_1.jpg">
 <img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_2.jpg">
 
