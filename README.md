@@ -8,6 +8,10 @@ Budgeting suggestions are given based on headings chosen
 <img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_1.jpg">
 <img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_2.jpg">
 
+### Structure Flowchart
+
+<img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/Mom_Data_Lucidchart.png">
+
 ## Reminders
 
 * Your code must be placed in the `run.py` file
