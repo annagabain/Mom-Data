@@ -1,4 +1,5 @@
-<img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/md-images">
+<img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_1.jpg">
+<img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_2.jpg">
 
 ## Reminders
 
