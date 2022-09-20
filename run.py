@@ -1,3 +1,5 @@
+import pandas as pd
+
 def main():
     """
     Runs when the programme starts
@@ -7,3 +9,8 @@ def main():
 
 
 main()
+
+
+# Read the Expenses file with help of Pandas library
+df = pd.read_excel (r'Expenses.xlsx')
+print (df)
