@@ -10,7 +10,15 @@ def main():
 
 main()
 
+print("Type ADD to add new data or VIEW to see the year's overview")
+decision_one = input().upper()
+if decision_one == 'VIEW':
+    # Read the Expenses file with help of Pandas library
+    df = pd.read_excel (r'Expenses.xlsx')
+    print (f"OVERVIEW 2022: \n \n {df}")
+elif decision_one == 'ADD':
+    print ("Insert 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing")
+else:
+    print("Try again")
 
-# Read the Expenses file with help of Pandas library
-df = pd.read_excel (r'Expenses.xlsx')
-print (f"OVERVIEW 2022: \n \n {df}")
+
