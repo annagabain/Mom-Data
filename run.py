@@ -48,16 +48,23 @@ def add_or_view():
         print("Invalid input, try again: \n")
         add_or_view()
 
+
+def add_user_input():
+    """
+    Collect the 'standard' expenses data from the user
+    """
+    user_input_one = input("Insert 1 month and 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
+    input_one_columns = user_input_one.split(",")
+    return input_one_columns
+
+
 def add_expenses():
     """
-    Update the expenses(test) with the data from input
+    Update the Standard Expenses sheet with the data from the user_input_one
     """
-    print ("Insert 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing")
-    f = open("test_expenses.txt", "a")
-    f.write(input())
-    f.write("\n")
-    print(f"Updating expenses...\n")
-    f.close()
+    worksheet_to_update = SHEET.worksheet("standard")
+    #write to the 'standard' expenses data from google  API spreadsheet
+    worksheet_to_update.append_row(add_user_input())
     print(f"Expenses updated successfully.\n")
 
     add_or_view()
@@ -67,8 +74,8 @@ def view_expenses():
     """
     View the existing expenses
     """   
-    #data from google spreadsheet API
-    print(f"Year's overview data:\n ")
+    #my 'standard' expenses data from google  API spreadsheet
+    print(f"Year's Expenses overview:\n ")
     dataframe = pd.DataFrame(standard_worksheet.get_all_records())
     print(dataframe)
 
