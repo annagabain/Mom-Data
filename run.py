@@ -19,8 +19,11 @@ def main():
 
 
 def add_or_view():
-    print("Type ADD to add new data or VIEW to see the year's overview")
-    decision_one = input().upper()
+    """
+    Enables the user's first decision making: 
+    input to add new expenses or to view the existing expenses
+    """
+    decision_one = input("Type ADD to add new data or VIEW to see the year's overview: \n\n").upper()
     if decision_one == 'VIEW':
         view_expenses()
     elif decision_one == 'ADD':
