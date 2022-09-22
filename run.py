@@ -29,7 +29,7 @@ def add_or_view():
     elif decision_one == 'ADD':
         add_expenses()
     else:
-        print("Invalid input, try again: ")
+        print("Invalid input, try again: \n")
         add_or_view()
 
 def add_expenses():
