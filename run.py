@@ -1,12 +1,28 @@
-import gspread
 import pandas as pd
+# import gspread
+# from google.oauth2.service_account import Credentials
 
-service_account = gspread.service_account(filename="service_account.json")
+
+# service_account = gspread.service_account(filename="service_account.json")
+# CREDS = Credentials.from_service_account_file('service_account.json')
+
+import gspread
+from google.oauth2.service_account import Credentials
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('service_account.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('mom_expenses')
 
 # Open a sheet from a google API spreadsheet
-sheet = service_account.open("mom_expenses")
-standard_worksheet = sheet.worksheet("standard")
-
+# sheet = service_account.open("mom_expenses")
+standard_worksheet = SHEET.worksheet("standard")
 
 def main():
     """

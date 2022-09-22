@@ -3,3 +3,4 @@ ood, Transport, Accomodation, Clothing
 1200, 500, 750, 380
 1100, 500, 750, 550
 1,1,1,1
+1,2,3,4
