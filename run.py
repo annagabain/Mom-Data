@@ -28,6 +28,7 @@ def add_expenses():
     print ("Insert 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing")
     f = open("test_expenses.txt", "a")
     f.write(input())
+    f.write("\n")
     print(f"Updating expenses...\n")
     f.close()
     print(f"Expenses updated successfully.\n")
@@ -39,9 +40,9 @@ def view_expenses():
     """
     View the existing expenses(test)
     """   
-     # Read the Expenses file with help of Pandas library (testing desired view)
-    df = pd.read_excel (r'Expenses.xlsx')
-    print (f"OVERVIEW 2022: \n \n {df}")
+    #  # Read the Expenses file with help of Pandas library (testing desired view)
+    # df = pd.read_excel (r'Expenses.xlsx')
+    # print (f"OVERVIEW 2022: \n \n {df}")
 
     # Read the expenses(test), a file that actually stores the current added input
 
