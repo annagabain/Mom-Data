@@ -1,6 +1,6 @@
-ood, Transport, Accomodation, Clothing
+this data is from the test-expenses file
+food, transport, accomodation, clothing
 900, 500, 750, 450
 1200, 500, 750, 380
 1100, 500, 750, 550
-1,1,1,1
-1,2,3,4
+

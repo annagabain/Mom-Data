@@ -5,18 +5,20 @@ The application creates and populates a database from user input
 It's possible to sort data by headings (and filter by budget)
 Budgeting suggestions are given based on headings chosen
 
-<img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_1.jpg">
+
+# [Live View](https://mom-data.herokuapp.com/)
+
+<img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/am_i_responsive.jpg">
+
+Initial scribbles
+
+<img width="50%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_1.jpg">
 <img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/initial_scribble_2.jpg">
 
 ### Structure Flowchart
 
 <img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/Mom_Data_Lucidchart.png">
 
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
 ## Creating the Heroku app
 
