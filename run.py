@@ -1,4 +1,12 @@
+import gspread
 import pandas as pd
+
+service_account = gspread.service_account(filename="service_account.json")
+
+# Open a sheet from a google API spreadsheet
+sheet = service_account.open("mom_expenses")
+standard_worksheet = sheet.worksheet("standard")
+
 
 def main():
     """
@@ -38,16 +46,12 @@ def add_expenses():
 
 def view_expenses():
     """
-    View the existing expenses(test)
+    View the existing expenses
     """   
-    #  # Read the Expenses file with help of Pandas library (testing desired view)
-    # df = pd.read_excel (r'Expenses.xlsx')
-    # print (f"OVERVIEW 2022: \n \n {df}")
-
-    # Read the expenses(test), a file that actually stores the current added input
-
-    f = open("test_expenses.txt", "r")
-    print(f.read())
+    #data from google spreadsheet API
+    print(f"Year's overview data:\n ")
+    dataframe = pd.DataFrame(standard_worksheet.get_all_records())
+    print(dataframe)
 
 
 main()

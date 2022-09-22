@@ -33,3 +33,4 @@ Connect your GitHub repository and deploy as normal.
 
 ### Sources
 https://datatofish.com/read_excel/
+How to Use Google Sheets With Python (2022): https://www.youtube.com/watch?v=bu5wXjz2KvU
