@@ -32,5 +32,6 @@ If you have credentials, such as in the Love Sandwiches project, you must create
 Connect your GitHub repository and deploy as normal.
 
 ### Sources
-https://datatofish.com/read_excel/
+How to use Pandas: https://datatofish.com/read_excel/
+
 How to Use Google Sheets With Python (2022): https://www.youtube.com/watch?v=bu5wXjz2KvU
