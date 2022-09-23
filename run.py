@@ -63,7 +63,7 @@ def add_expenses():
     Update the Standard Expenses sheet with the data from the user_input_one
     """
     worksheet_to_update = SHEET.worksheet("standard")
-    #write to the 'standard' expenses data from google  API spreadsheet
+    # write to the 'standard' expenses data from google  API spreadsheet
     worksheet_to_update.append_row(add_user_input())
     print(f"Expenses updated successfully.\n")
 
@@ -74,7 +74,7 @@ def view_expenses():
     """
     View the existing expenses
     """   
-    #my 'standard' expenses data from google  API spreadsheet
+    # my 'standard' expenses data from google  API spreadsheet
     print(f"Year's Expenses overview:\n ")
     dataframe = pd.DataFrame(standard_worksheet.get_all_records())
     print(dataframe)
