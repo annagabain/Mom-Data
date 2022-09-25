@@ -28,8 +28,10 @@ def main():
     """
     Runs when the programme starts
     """
-    print(f"\n...............Hello and welcome to MOM DATA...............\n")
-    print(f"...Here you can get insights about your monthly expenses...\n")
+    print(f"\n=========   Hello and welcome to MOM DATA   =========\n")
+    print(f"Here you can get insights about your monthly expenses\n")
+    print(f"=====================================================\n")
+    print()
 
     add_or_view()
 
@@ -39,14 +41,18 @@ def add_or_view():
     Enables the user's first decision making: 
     input to add new expenses or to view the existing expenses
     """
-    decision_one = input("Type ADD to add new data or VIEW to see the year's overview: \n\n").upper()
-    if decision_one == 'VIEW':
-        view_expenses()
-    elif decision_one == 'ADD':
-        add_expenses()
-    else:
-        print("Invalid input, try again: \n")
-        add_or_view()
+    while True:
+        print("Type: \n")
+        decision_one = input("- ADD to add new data \n- VIEW to see the year's overview or \n- EXIT to exit the programme: \n\n").upper()
+        if decision_one == 'EXIT':
+            break
+        elif decision_one == 'VIEW':
+            view_expenses()
+        elif decision_one == 'ADD':
+            add_expenses()
+        else:
+            print("Invalid input, try again: \n")
+            add_or_view()
 
 
 def add_user_input():
@@ -63,6 +69,10 @@ def add_expenses():
     Update the Standard Expenses sheet with the data from the user_input_one
     """
     worksheet_to_update = SHEET.worksheet("standard")
+
+    #Choose the expense month, add expenses to it or overwrite if exists
+    #THE CODE GOES HERE
+    
     # write to the 'standard' expenses data from google  API spreadsheet
     worksheet_to_update.append_row(add_user_input())
     print(f"Expenses updated successfully.\n")
