@@ -39,8 +39,6 @@ def add_or_view():
         if decision_one == 'EXIT':
             print("Goodbye!")
             exit()
-            #break
-
         elif decision_one == 'VIEW':
             view_expenses()
         elif decision_one == 'ADD':
@@ -54,28 +52,36 @@ def add_new_expenses():
     """
     Collect the 'standard' expenses data from the user
     """
-    worksheet = SHEET.worksheet("standard")
+    worksheet = SHEET.worksheet("standard")   
 
     # individual rows to update or add new expenses to
-    january = worksheet.row_values(3)
-    february = worksheet.row_values(4)
-    march = worksheet.row_values(5)
-    april = worksheet.row_values(6)
-    may = worksheet.row_values(7)
-    june = worksheet.row_values(8)
+    January = worksheet.row_values(3)
+    February = worksheet.row_values(4)
+    March = worksheet.row_values(5)
+    April = worksheet.row_values(6)
+    May = worksheet.row_values(7)
+    June = worksheet.row_values(8)
 
     #Choose the expense month, add expenses to it or overwrite if exists
-    print("Choose the expense month...")
+    decision_two = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n")
+    
+    if decision_two == "1":
+        print(January)
+    elif decision_two == "2":
+        print(February)
+    elif decision_two == "3":
+        print(March)
+    elif decision_two == "4":
+        print(April)
+    elif decision_two == "5":
+        print(May)
+    elif decision_two == "6":
+        print(June)
+    else:
+        print("try again..")
 
-    #testing the rows
-    print(january)
-    print(february)
-    print(march)
-    print(april)
-    print(may)
-    print(june)
 
-    user_input_one = input("Insert 1 month and 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
+    user_input_one = input("Insert **1 month and** 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
     input_one_columns = user_input_one.split(",")
     return input_one_columns
 
@@ -100,6 +106,7 @@ def view_expenses():
     # my 'standard' expenses data from google  API spreadsheet
     print("-----------------------------------------------------")
     print(f"Year's Expenses overview:\n ")
+    print("-----------------------------------------------------")
     dataframe = pd.DataFrame(standard_worksheet.get_all_records())
     print(dataframe)
     print("-----------------------------------------------------")
