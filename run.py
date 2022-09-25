@@ -45,6 +45,7 @@ def add_or_view():
         print("Type: \n")
         decision_one = input("- ADD to add new data \n- VIEW to see the year's overview or \n- EXIT to exit the programme: \n\n").upper()
         if decision_one == 'EXIT':
+            print("Goodbye!")
             break
         elif decision_one == 'VIEW':
             view_expenses()
