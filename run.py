@@ -1,11 +1,4 @@
 import pandas as pd
-# import gspread
-# from google.oauth2.service_account import Credentials
-
-
-# service_account = gspread.service_account(filename="service_account.json")
-# CREDS = Credentials.from_service_account_file('service_account.json')
-
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -32,7 +25,6 @@ def main():
     print(f"Here you can get insights about your monthly expenses\n")
     print(f"=====================================================\n")
     print()
-
     add_or_view()
 
 
@@ -42,40 +34,60 @@ def add_or_view():
     input to add new expenses or to view the existing expenses
     """
     while True:
-        print("Type: \n")
-        decision_one = input("- ADD to add new data \n- VIEW to see the year's overview or \n- EXIT to exit the programme: \n\n").upper()
+        print("Please type... \n")
+        decision_one = input("- ADD to add new expenses \n- VIEW to see the year's overview or \n- EXIT to exit the programme: \n\n").upper()
         if decision_one == 'EXIT':
             print("Goodbye!")
-            break
+            exit()
+            #break
+
         elif decision_one == 'VIEW':
             view_expenses()
         elif decision_one == 'ADD':
-            add_expenses()
+            update_expenses()
         else:
             print("Invalid input, try again: \n")
             add_or_view()
 
 
-def add_user_input():
+def add_new_expenses():
     """
     Collect the 'standard' expenses data from the user
     """
+    worksheet = SHEET.worksheet("standard")
+
+    # individual rows to update or add new expenses to
+    january = worksheet.row_values(3)
+    february = worksheet.row_values(4)
+    march = worksheet.row_values(5)
+    april = worksheet.row_values(6)
+    may = worksheet.row_values(7)
+    june = worksheet.row_values(8)
+
+    #Choose the expense month, add expenses to it or overwrite if exists
+    print("Choose the expense month...")
+
+    #testing the rows
+    print(january)
+    print(february)
+    print(march)
+    print(april)
+    print(may)
+    print(june)
+
     user_input_one = input("Insert 1 month and 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
     input_one_columns = user_input_one.split(",")
     return input_one_columns
 
 
-def add_expenses():
+def update_expenses():
     """
-    Update the Standard Expenses sheet with the data from the user_input_one
+    Update the Standard Expenses sheet with the data from the add_new_expenses
     """
     worksheet_to_update = SHEET.worksheet("standard")
 
-    #Choose the expense month, add expenses to it or overwrite if exists
-    #THE CODE GOES HERE
-    
     # write to the 'standard' expenses data from google  API spreadsheet
-    worksheet_to_update.append_row(add_user_input())
+    worksheet_to_update.append_row(add_new_expenses())
     print(f"Expenses updated successfully.\n")
 
     add_or_view()
@@ -86,9 +98,13 @@ def view_expenses():
     View the existing expenses
     """   
     # my 'standard' expenses data from google  API spreadsheet
+    print("-----------------------------------------------------")
     print(f"Year's Expenses overview:\n ")
     dataframe = pd.DataFrame(standard_worksheet.get_all_records())
     print(dataframe)
+    print("-----------------------------------------------------")
+
+    print()
 
 
 main()
