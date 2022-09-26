@@ -17,7 +17,7 @@ SHEET = GSPREAD_CLIENT.open('mom_expenses')
 # sheet = service_account.open("mom_expenses")
 standard_worksheet = SHEET.worksheet("standard")
 
-def main():
+def intro_title():
     """
     Runs when the programme starts
     """
@@ -25,10 +25,10 @@ def main():
     print(f"Here you can get insights about your monthly expenses\n")
     print(f"=====================================================\n")
     print()
-    add_or_view()
+    main_menu()
 
 
-def add_or_view():
+def main_menu():
     """
     Enables the user's first decision making: 
     input to add new expenses or to view the existing expenses
@@ -44,8 +44,8 @@ def add_or_view():
         elif decision_one == 'ADD':
             update_expenses()
         else:
-            print("Invalid input, try again: \n")
-            add_or_view()
+            print("Invalid input, please try again: \n")
+            main_menu()
 
 
 def add_new_expenses():
@@ -62,7 +62,7 @@ def add_new_expenses():
     May = worksheet.row_values(7)
     June = worksheet.row_values(8)
 
-    #Choose the expense month, add expenses to it or overwrite if exists
+    #Choose the expense month...
     decision_two = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n")
     
     if decision_two == "1":
@@ -80,10 +80,12 @@ def add_new_expenses():
     else:
         print("try again..")
 
-
-    user_input_one = input("Insert **1 month and** 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
-    input_one_columns = user_input_one.split(",")
-    return input_one_columns
+    #...add expenses to it or overwrite if exists
+    print(worksheet.find("January"))
+    
+    # user_input_one = input("Insert **1 month and** 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
+    # input_one_columns = user_input_one.split(",")
+    # return input_one_columns
 
 
 def update_expenses():
@@ -93,10 +95,14 @@ def update_expenses():
     worksheet_to_update = SHEET.worksheet("standard")
 
     # write to the 'standard' expenses data from google  API spreadsheet
-    worksheet_to_update.append_row(add_new_expenses())
+    # worksheet_to_update.append_row(add_new_expenses())
+
+    #test to update one sell
+    worksheet_to_update.update('B3', '1150')
+
     print(f"Expenses updated successfully.\n")
 
-    add_or_view()
+    main_menu()
 
 
 def view_expenses():
@@ -114,4 +120,4 @@ def view_expenses():
     print()
 
 
-main()
+intro_title()
