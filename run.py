@@ -35,7 +35,7 @@ def main_menu():
     """
     while True:
         print("Please type... \n")
-        decision_one = input("- ADD to add new expenses \n- VIEW to see the year's overview or \n- EXIT to exit the programme: \n\n").upper()
+        decision_one = input("- VIEW to see the year's overview \n- ADD to add new expenses or \n- EXIT to exit the programme: \n\n").upper()
         if decision_one == 'EXIT':
             print("Goodbye!")
             exit()
@@ -55,8 +55,9 @@ def locate_the_month_row():
     worksheet = SHEET.worksheet("standard")   
     
     #Choose the expense month...
-    month_number = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n- 7 July\n- 8 August\n- 9 September\n- 10 October\n- 11 November\n- 12 December\n")
-    
+    print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
+    month_number = input("- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n- 7 July\n- 8 August\n- 9 September\n- 10 October\n- 11 November\n- 12 December\n\n")
+    print()
     # individual rows to update or add new expenses to
     # January = worksheet.row_values(3)
     # February = worksheet.row_values(4)
@@ -104,7 +105,7 @@ def locate_the_month_row():
     else:
         print("try again..")
 
-    print(f"Chosen month: {month}")
+    print(f"Chosen month: {month}\n")
 
     return month_row
 
@@ -131,7 +132,7 @@ def update_expenses():
     worksheet = SHEET.worksheet("standard")
 
     #test updating specific row from user input
-    user_input_two = input("Insert 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
+    user_input_two = input("Insert 4 numbers, separated by commas,\n for Food, Transport, Accomodation, Clothing... \n" )
     input_two = user_input_two.split(",")
     worksheet.update(cells, [input_two])
     print(f"Expenses updated successfully.\n")
@@ -144,6 +145,7 @@ def view_expenses():
     View the existing expenses
     """   
     # my 'standard' expenses data from google  API spreadsheet
+    print()
     print("-----------------------------------------------------")
     print(f"Year's Expenses overview:\n ")
     print("-----------------------------------------------------")
