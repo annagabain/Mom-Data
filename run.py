@@ -48,12 +48,15 @@ def main_menu():
             main_menu()
 
 
-def add_new_expenses():
+def locate_the_month_row():
     """
-    Collect the 'standard' expenses data from the user
+    Choose the month and locate the row that will be updated
     """
     worksheet = SHEET.worksheet("standard")   
-
+    
+    #Choose the expense month...
+    month_number = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n")
+    
     # individual rows to update or add new expenses to
     January = worksheet.row_values(3)
     February = worksheet.row_values(4)
@@ -62,8 +65,6 @@ def add_new_expenses():
     May = worksheet.row_values(7)
     June = worksheet.row_values(8)
 
-    #Choose the expense month...
-    month_number = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n")
     
     if month_number == "1":
         month_row = January
@@ -91,29 +92,28 @@ def add_new_expenses():
     #...add expenses to it or overwrite if exists
     # print(worksheet.find("January"))
 
-    
+    #OLD CODE
     # user_input_one = input("Insert **1 month and** 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
     # input_one_columns = user_input_one.split(",")
     # return input_one_columns
 
-add_new_expenses()
+locate_the_month_row()
+
 def update_expenses():
     """
+    Collect the 'standard' expenses data from the user
     Update the Standard Expenses sheet with the data from the add_new_expenses
     """
     
     # write to the 'standard' expenses data from google  API spreadsheet
     worksheet = SHEET.worksheet("standard")
 
-    # locate the cells based on add_new_expenses function here
+# TO DO! 
+    #locate the cells based on add_new_expenses function here
     #CODE GOES HERE
 
     # OLD CODE write to the 'standard' expenses data from google  API spreadsheet
     # worksheet_to_update.append_row(add_user_input())
-    # print(f"Expenses updated successfully.\n")
-
-    #test updating specific row
-    # worksheet.update('B3:E3', [[1300, 500, 750, 400]])
     # print(f"Expenses updated successfully.\n")
 
     #test updating specific row from user input
