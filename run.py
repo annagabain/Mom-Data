@@ -27,6 +27,12 @@ def intro_title():
     print()
     main_menu()
 
+def share():
+    """
+    Share the worksheet with the user
+    """
+    SHEET.share('user@example.com', perm_type='user', role='writer')
+    print(f"Shared successfully.\n")
 
 def main_menu():
     """
@@ -37,6 +43,7 @@ def main_menu():
         print("Please type... \n")
         decision_one = input("- VIEW to see the year's overview \n- ADD to add new expenses or \n- EXIT to exit the programme: \n\n").upper()
         if decision_one == 'EXIT':
+            # share()
             print("Goodbye!")
             exit()
         elif decision_one == 'VIEW':
@@ -47,6 +54,8 @@ def main_menu():
             print("Invalid input, please try again: \n")
             main_menu()
 
+
+    
 
 def locate_the_month_row():
     """
@@ -157,3 +166,4 @@ def view_expenses():
 
 
 intro_title()
+

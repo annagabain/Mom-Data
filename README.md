@@ -24,7 +24,7 @@ Initial scribbles
 
 ## Structure Flowchart
 
-<img width="100%" alt="I am responsive mom lifehacks media sizes" src="assets/Mom_Data_Lucidchart.png">
+<img width="100%" alt="Mom Data Structure Flowchart" src="assets/Mom_Data_Lucidchart_01.png">
 
 
 ## Creating the Heroku app
