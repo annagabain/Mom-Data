@@ -63,25 +63,34 @@ def add_new_expenses():
     June = worksheet.row_values(8)
 
     #Choose the expense month...
-    decision_two = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n")
+    month_number = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n")
     
-    if decision_two == "1":
-        print(January)
-    elif decision_two == "2":
-        print(February)
-    elif decision_two == "3":
-        print(March)
-    elif decision_two == "4":
-        print(April)
-    elif decision_two == "5":
-        print(May)
-    elif decision_two == "6":
-        print(June)
+    if month_number == "1":
+        month_row = January
+    elif month_number == "2":
+        month_row = February
+    elif month_number == "3":
+        month_row = March
+    elif month_number == "4":
+        month_row = April
+    elif month_number == "5":
+        month_row = May
+    elif month_number == "6":
+        month_row = June
     else:
         print("try again..")
 
+    # Find the specific month row to update
+    new_list = []
+    for item in month_row:
+        new_list.append(item)
+    values_without_month_name = new_list[1:]
+    print(f"{new_list[0]} values {values_without_month_name}")
+
+# TO DO!
     #...add expenses to it or overwrite if exists
-    print(worksheet.find("January"))
+    # print(worksheet.find("January"))
+
     
     # user_input_one = input("Insert **1 month and** 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
     # input_one_columns = user_input_one.split(",")
@@ -99,9 +108,18 @@ def update_expenses():
     # locate the cells based on add_new_expenses function here
     #CODE GOES HERE
 
-    #test updating specific row
-    worksheet.update('B3:E3', [[1300, 500, 750, 400]])
+    # OLD CODE write to the 'standard' expenses data from google  API spreadsheet
+    # worksheet_to_update.append_row(add_user_input())
+    # print(f"Expenses updated successfully.\n")
 
+    #test updating specific row
+    # worksheet.update('B3:E3', [[1300, 500, 750, 400]])
+    # print(f"Expenses updated successfully.\n")
+
+    #test updating specific row from user input
+    user_input_two = input("Insert 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
+    input_two = user_input_two.split(",")
+    worksheet.update('B3:E3', [input_two])
     print(f"Expenses updated successfully.\n")
 
     main_menu()
