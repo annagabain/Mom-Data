@@ -55,71 +55,85 @@ def locate_the_month_row():
     worksheet = SHEET.worksheet("standard")   
     
     #Choose the expense month...
-    month_number = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n")
+    month_number = input("\n Choose the expense month...\n- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n- 7 July\n- 8 August\n- 9 September\n- 10 October\n- 11 November\n- 12 December\n")
     
     # individual rows to update or add new expenses to
-    January = worksheet.row_values(3)
-    February = worksheet.row_values(4)
-    March = worksheet.row_values(5)
-    April = worksheet.row_values(6)
-    May = worksheet.row_values(7)
-    June = worksheet.row_values(8)
+    # January = worksheet.row_values(3)
+    # February = worksheet.row_values(4)
+    # March = worksheet.row_values(5)
+    # April = worksheet.row_values(6)
+    # May = worksheet.row_values(7)
+    # June = worksheet.row_values(8)
 
-    
     if month_number == "1":
-        month_row = January
+        month_row = 'B3:E3'
+        month = 'January'
     elif month_number == "2":
-        month_row = February
+        month_row = 'B4:E4'
+        month = 'February'
     elif month_number == "3":
-        month_row = March
+        month_row = 'B5:E5'
+        month = 'March'
     elif month_number == "4":
-        month_row = April
+        month_row = 'B6:E6'
+        month = 'April'
     elif month_number == "5":
-        month_row = May
+        month_row = 'B7:E7'
+        month = 'May'
     elif month_number == "6":
-        month_row = June
+        month_row = 'B8:E8'
+        month = 'June'
+    elif month_number == "7":
+        month_row = 'B9:E9'
+        month = 'July'
+    elif month_number == "8":
+        month_row = 'B10:E10'
+        month = 'August'
+    elif month_number == "9":
+        month_row = 'B11:E11'
+        month = 'September'
+    elif month_number == "10":
+        month_row = 'B12:E12'
+        month = 'October'
+    elif month_number == "11":
+        month_row = 'B13:E13'
+        month = 'November'
+    elif month_number == "12":
+        month_row = 'B14:E14'
+        month = 'December'
     else:
         print("try again..")
 
-    # Find the specific month row to update
-    new_list = []
-    for item in month_row:
-        new_list.append(item)
-    values_without_month_name = new_list[1:]
-    print(f"{new_list[0]} values {values_without_month_name}")
+    print(f"Chosen month: {month}")
+
+    return month_row
+
+
+# Print the specific month row item(s)
+# new_list = []
+# for item in month_row:
+#     new_list.append(item)
+# values_without_month_name = new_list[1:]
+# print(f"{new_list[0]} values {values_without_month_name}")
 
 # TO DO!
     #...add expenses to it or overwrite if exists
     # print(worksheet.find("January"))
 
-    #OLD CODE
-    # user_input_one = input("Insert **1 month and** 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
-    # input_one_columns = user_input_one.split(",")
-    # return input_one_columns
-
-locate_the_month_row()
-
 def update_expenses():
     """
     Collect the 'standard' expenses data from the user
-    Update the Standard Expenses sheet with the data from the add_new_expenses
+    Update the Standard Expenses sheet cells retrieved from locate_the_month_row function
     """
+    cells = str(locate_the_month_row())
     
     # write to the 'standard' expenses data from google  API spreadsheet
     worksheet = SHEET.worksheet("standard")
 
-# TO DO! 
-    #locate the cells based on add_new_expenses function here
-    #CODE GOES HERE
-
-    # OLD CODE write to the 'standard' expenses data from google  API spreadsheet
-    # worksheet_to_update.append_row(add_user_input())
-    # print(f"Expenses updated successfully.\n")
-
     #test updating specific row from user input
     user_input_two = input("Insert 4 numbers, separated by commas for Food, Transport, Accomodation, Clothing: \n" )
     input_two = user_input_two.split(",")
-    worksheet.update('B3:E3', [input_two])
+    worksheet.update(cells, [input_two])
     print(f"Expenses updated successfully.\n")
 
     main_menu()
