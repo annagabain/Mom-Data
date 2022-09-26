@@ -87,18 +87,20 @@ def add_new_expenses():
     # input_one_columns = user_input_one.split(",")
     # return input_one_columns
 
-
+add_new_expenses()
 def update_expenses():
     """
     Update the Standard Expenses sheet with the data from the add_new_expenses
     """
-    worksheet_to_update = SHEET.worksheet("standard")
-
+    
     # write to the 'standard' expenses data from google  API spreadsheet
-    # worksheet_to_update.append_row(add_new_expenses())
+    worksheet = SHEET.worksheet("standard")
 
-    #test to update one sell
-    worksheet_to_update.update('B3', '1150')
+    # locate the cells based on add_new_expenses function here
+    #CODE GOES HERE
+
+    #test updating specific row
+    worksheet.update('B3:E3', [[1300, 500, 750, 400]])
 
     print(f"Expenses updated successfully.\n")
 
