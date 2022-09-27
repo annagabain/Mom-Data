@@ -46,3 +46,5 @@ How to use Pandas: https://datatofish.com/read_excel/
 How to Use Google Sheets With Python (2022): https://www.youtube.com/watch?v=bu5wXjz2KvU
 
 Some inspiration from Build A Simple Expense Tracker Using Python: https://www.youtube.com/watch?v=AnKc74fWYCg
+
+How to Validate User Inputs in Python: https://www.youtube.com/watch?v=LUWyA3m_-r0

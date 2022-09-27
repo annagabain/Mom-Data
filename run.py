@@ -138,24 +138,32 @@ def update_expenses():
     Update the Standard Expenses sheet cells retrieved from locate_the_month_row function
     """
     cells = str(locate_the_month_row())
-
-
-    # write to the 'standard' expenses data from google  API spreadsheet
     worksheet = SHEET.worksheet("standard")
 
-    #test updating specific row from user input
-    user_input_two = input("Insert 4 numbers, separated by commas,\n for Food, Transport, Accomodation, Clothing... \n" )
-    # print(type(user_input_two))
-    # print(int(user_input_two))
-    
-    try:
-        input_two = user_input_two.split(",")
-        if len(input_two) != 4:
-            raise ValueError()
-        worksheet.update(cells, [input_two])
-        print(f"Expenses updated successfully.\n")
-    except ValueError:
-        print('Make sure you entered exactly 4 numbers!')
+    #Updating specific row from user input
+    while True:
+        user_input_two = input("Insert 4 numbers, separated by commas,\n for Food, Transport, Accomodation, Clothing... \n" )
+        try:
+            input_two = user_input_two.split(",")
+
+            if len(input_two) != 4:
+                raise ValueError()
+                break
+
+            for expense in input_two:
+                print(expense)
+
+            expense = int(expense)
+
+            # write to the 'standard' expenses data from google  API spreadsheet
+            worksheet.update(cells, [input_two])
+            print(f"Expenses updated successfully.\n")
+            return False
+                
+        except ValueError:
+            print('Make sure you entered (exactly 4) numbers!')
+            print("Try again...")
+            print()
     
     main_menu()
 
