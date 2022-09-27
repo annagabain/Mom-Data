@@ -66,6 +66,8 @@ def locate_the_month_row():
     #Choose the expense month...
     print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
     month_number = input("- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n- 7 July\n- 8 August\n- 9 September\n- 10 October\n- 11 November\n- 12 December\n\n")
+
+    
     print()
     # individual rows to update or add new expenses to
     # January = worksheet.row_values(3)
@@ -136,16 +138,25 @@ def update_expenses():
     Update the Standard Expenses sheet cells retrieved from locate_the_month_row function
     """
     cells = str(locate_the_month_row())
-    
+
+
     # write to the 'standard' expenses data from google  API spreadsheet
     worksheet = SHEET.worksheet("standard")
 
     #test updating specific row from user input
     user_input_two = input("Insert 4 numbers, separated by commas,\n for Food, Transport, Accomodation, Clothing... \n" )
-    input_two = user_input_two.split(",")
-    worksheet.update(cells, [input_two])
-    print(f"Expenses updated successfully.\n")
-
+    # print(type(user_input_two))
+    # print(int(user_input_two))
+    
+    try:
+        input_two = user_input_two.split(",")
+        if len(input_two) != 4:
+            raise ValueError()
+        worksheet.update(cells, [input_two])
+        print(f"Expenses updated successfully.\n")
+    except ValueError:
+        print('Make sure you entered exactly 4 numbers!')
+    
     main_menu()
 
 
