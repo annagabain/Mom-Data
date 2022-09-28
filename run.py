@@ -67,7 +67,7 @@ def locate_the_month_row():
         
         #Choose the expense month...
         print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
-        month_number = input("     - 1  - January\n     - 2  - February\n     - 3  - March\n     - 4  - April\n     - 5  - May\n     - 6  - June\n     - 7  - July\n     - 8  - August\n     - 9  - September\n     - 10 - October\n     - 11 - November\n     - 12 - December\n\n")
+        month_number = input("     - 1  - for January\n     - 2  - for February\n     - 3  - for March\n     - 4  - for April\n     - 5  - for May\n     - 6  - for June\n     - 7  - for July\n     - 8  - for August\n     - 9  - for September\n     - 10 - for October\n     - 11 - for November\n     - 12 - for December\n\n")
         print()
 
         try:
