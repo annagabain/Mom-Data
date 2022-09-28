@@ -25,6 +25,8 @@ def intro_title():
     print(f"Here you can get insights about your monthly expenses\n")
     print(f"=====================================================\n")
     print()
+
+    set_budget()
     main_menu()
 
 def share():
@@ -33,6 +35,29 @@ def share():
     """
     SHEET.share('user@example.com', perm_type='user', role='writer')
     print(f"Shared successfully.\n")
+
+def set_budget():
+    """
+    Setting the monthly budget
+    """
+    while True:
+        print("Please set a Budget\n")
+        budget = input("e.g. 2500...\n\n")
+        print()
+        try:
+            budget = int(budget)
+            print(f"Your budget of {budget} is confirmed")
+            print()
+            print()
+        except ValueError:
+            print(f"{budget} is not a valid budget")
+            print('Make sure you entered a number!')
+            print()
+            print("Try again...")
+            continue
+            print()
+        return budget
+
 
 def main_menu():
     """
@@ -65,7 +90,7 @@ def locate_the_month_row():
     
     while True:
         
-        #Choose the expense month...
+        # Choose the expense month...
         print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
         month_number = input("     - 1  - for January\n     - 2  - for February\n     - 3  - for March\n     - 4  - for April\n     - 5  - for May\n     - 6  - for June\n     - 7  - for July\n     - 8  - for August\n     - 9  - for September\n     - 10 - for October\n     - 11 - for November\n     - 12 - for December\n\n")
         print()
@@ -94,7 +119,7 @@ def update_expenses():
     cells = str(locate_the_month_row())
     worksheet = SHEET.worksheet("standard")
 
-    #Updating specific row from user input
+    # Updating specific row from user input
     while True:
         user_input_two = input("Insert 4 numbers, separated by commas,\n for Food, Transport, Accomodation, Clothing... \n" )
         try:
@@ -121,6 +146,8 @@ def update_expenses():
         print(f"Expenses updated successfully.\n")
         return False
     
+    # update_total()
+    # update_budget_status()
     main_menu()
 
 
@@ -130,15 +157,14 @@ def view_expenses():
     """   
     # my 'standard' expenses data from google  API spreadsheet
     print()
-    print("-----------------------------------------------------")
+    print("-------------------------------------------------------------")
     print(f"Year's Expenses overview:\n ")
-    print("-----------------------------------------------------")
+    print("-------------------------------------------------------------")
     dataframe = pd.DataFrame(standard_worksheet.get_all_records())
-    print(dataframe)
-    print("-----------------------------------------------------")
+    print(dataframe.to_string(index=False))
+    print("-------------------------------------------------------------")
 
     print()
 
 
 intro_title()
-

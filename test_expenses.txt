@@ -1,6 +1,0 @@
-this data is from the test-expenses file
-food, transport, accomodation, clothing
-900, 500, 750, 450
-1200, 500, 750, 380
-1100, 500, 750, 550
-
