@@ -41,7 +41,7 @@ def main_menu():
     """
     while True:
         print("Please type... \n")
-        decision_one = input("- VIEW to see the year's overview \n- ADD to add new expenses or \n- EXIT to exit the programme: \n\n").upper()
+        decision_one = input("     - VIEW - to see the year's overview \n     - ADD - to add new expenses or \n     - EXIT - to exit the programme: \n\n").upper()
         if decision_one == 'EXIT':
             # share()
             print("Goodbye!")
@@ -63,15 +63,26 @@ def locate_the_month_row():
     """
     worksheet = SHEET.worksheet("standard")   
     
-    #Choose the expense month...
-    print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
-    month_number = input("- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n- 7 July\n- 8 August\n- 9 September\n- 10 October\n- 11 November\n- 12 December\n\n")
-    print()
+    while True:
+        
+        #Choose the expense month...
+        print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
+        month_number = input("     - 1  - January\n     - 2  - February\n     - 3  - March\n     - 4  - April\n     - 5  - May\n     - 6  - June\n     - 7  - July\n     - 8  - August\n     - 9  - September\n     - 10 - October\n     - 11 - November\n     - 12 - December\n\n")
+        print()
 
-    result = worksheet.find(months[int(month_number)-1])
-    print(f"Chosen month: {months[int(month_number) -1 ]}\n")
-
-    return f"B{result.row}:E{result.row}"
+        try:
+            month_number = int(month_number)
+        except ValueError:
+            print(f"{month_number} is not a number")
+            print('Make sure you entered a number!')
+            print()
+            print("Try again...")
+            print()
+            continue
+        
+        result = worksheet.find(months[int(month_number)-1])
+        print(f"Chosen month: {months[int(month_number) -1 ]}\n")
+        return f"B{result.row}:E{result.row}"
 
 
 def update_expenses():

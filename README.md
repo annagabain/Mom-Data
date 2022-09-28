@@ -31,6 +31,12 @@ Initial scribbles
 
 Connected to GitHub repository and deployed.
 
+## Testing
+
+Cat is not a number!
+
+<img width="50%" alt="cat is not a number" src="assets/user_input_test_nan.jpg">
+
 ## Sources
 How to use Pandas: https://datatofish.com/read_excel/
 
