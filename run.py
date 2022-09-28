@@ -14,27 +14,9 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('mom_expenses')
 
 # Open a sheet from a google API spreadsheet
-# sheet = service_account.open("mom_expenses")
 standard_worksheet = SHEET.worksheet("standard")
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-def intro_title():
-    """
-    Runs when the programme starts
-    """
-    print(f"\n=========   Hello and welcome to MOM DATA   =========\n")
-    print(f"Here you can get insights about your monthly expenses\n")
-    print(f"=====================================================\n")
-    print()
-
-    set_budget()
-    main_menu()
-
-def share():
-    """
-    Share the worksheet with the user
-    """
-    SHEET.share('user@example.com', perm_type='user', role='writer')
-    print(f"Shared successfully.\n")
 
 def set_budget():
     """
@@ -42,7 +24,7 @@ def set_budget():
     """
     while True:
         print("Please set a Budget\n")
-        budget = input("e.g. 2500...\n\n")
+        budget = input("     e.g. 2500...\n\n")
         print()
         try:
             budget = int(budget)
@@ -78,9 +60,28 @@ def main_menu():
         else:
             print("Invalid input, please try again: \n")
             main_menu()
-
-months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
+
+def intro_title():
+    """
+    Runs when the programme starts
+    """
+    print(f"\n=========   Hello and welcome to MOM DATA   =========\n")
+    print(f"Here you can get insights about your monthly expenses\n")
+    print(f"=====================================================\n")
+    print()
+
+    set_budget()
+    main_menu()
+
+
+def share():
+    """
+    Share the worksheet with the user
+    """
+    SHEET.share('user@example.com', perm_type='user', role='writer')
+    print(f"Shared successfully.\n")
+
 
 def locate_the_month_row():
     """
@@ -108,6 +109,13 @@ def locate_the_month_row():
         result = worksheet.find(months[int(month_number)-1])
         print(f"Chosen month: {months[int(month_number) -1 ]}\n")
         return f"B{result.row}:E{result.row}"
+
+
+def update_total():
+    print("Updating total...")
+
+def update_budget_status():
+    print("Updating the budget status...")
 
 
 def update_expenses():
@@ -141,13 +149,14 @@ def update_expenses():
             continue
     
         # write to the 'standard' expenses data from google  API spreadsheet
-        print(f"Updating expenses...\n")
+        print(f"Updating expenses...")
         worksheet.update(cells, [input_two])
+        update_total()
+        update_budget_status()
         print(f"Expenses updated successfully.\n")
+
         return False
     
-    # update_total()
-    # update_budget_status()
     main_menu()
 
 
