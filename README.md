@@ -29,16 +29,7 @@ Initial scribbles
 
 ## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
+Connected to GitHub repository and deployed.
 
 ## Sources
 How to use Pandas: https://datatofish.com/read_excel/
@@ -48,3 +39,9 @@ How to Use Google Sheets With Python (2022): https://www.youtube.com/watch?v=bu5
 Some inspiration from Build A Simple Expense Tracker Using Python: https://www.youtube.com/watch?v=AnKc74fWYCg
 
 How to Validate User Inputs in Python: https://www.youtube.com/watch?v=LUWyA3m_-r0
+
+## Acknowledgemts
+
+Richard Wells - course mentor for friendly guidance, help with refactoring some code and feedback on the project
+
+Jakob Lövhall - providing warm support, inculding babysitting most evenings to allow more time for the project

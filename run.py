@@ -54,7 +54,7 @@ def main_menu():
             print("Invalid input, please try again: \n")
             main_menu()
 
-
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
 
 def locate_the_month_row():
@@ -66,71 +66,13 @@ def locate_the_month_row():
     #Choose the expense month...
     print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
     month_number = input("- 1 January\n- 2 February\n- 3 March\n- 4 April\n- 5 May\n- 6 June\n- 7 July\n- 8 August\n- 9 September\n- 10 October\n- 11 November\n- 12 December\n\n")
-
-    
     print()
-    # individual rows to update or add new expenses to
-    # January = worksheet.row_values(3)
-    # February = worksheet.row_values(4)
-    # March = worksheet.row_values(5)
-    # April = worksheet.row_values(6)
-    # May = worksheet.row_values(7)
-    # June = worksheet.row_values(8)
 
-    if month_number == "1":
-        month_row = 'B3:E3'
-        month = 'January'
-    elif month_number == "2":
-        month_row = 'B4:E4'
-        month = 'February'
-    elif month_number == "3":
-        month_row = 'B5:E5'
-        month = 'March'
-    elif month_number == "4":
-        month_row = 'B6:E6'
-        month = 'April'
-    elif month_number == "5":
-        month_row = 'B7:E7'
-        month = 'May'
-    elif month_number == "6":
-        month_row = 'B8:E8'
-        month = 'June'
-    elif month_number == "7":
-        month_row = 'B9:E9'
-        month = 'July'
-    elif month_number == "8":
-        month_row = 'B10:E10'
-        month = 'August'
-    elif month_number == "9":
-        month_row = 'B11:E11'
-        month = 'September'
-    elif month_number == "10":
-        month_row = 'B12:E12'
-        month = 'October'
-    elif month_number == "11":
-        month_row = 'B13:E13'
-        month = 'November'
-    elif month_number == "12":
-        month_row = 'B14:E14'
-        month = 'December'
-    else:
-        print("try again..")
+    result = worksheet.find(months[int(month_number)-1])
+    print(f"Chosen month: {months[int(month_number) -1 ]}\n")
 
-    print(f"Chosen month: {month}\n")
+    return f"B{result.row}:E{result.row}"
 
-    return month_row
-
-
-# Print the specific month row item(s)
-# new_list = []
-# for item in month_row:
-#     new_list.append(item)
-# values_without_month_name = new_list[1:]
-# print(f"{new_list[0]} values {values_without_month_name}")
-
-# TO DO!
-    #...add expenses to it or overwrite if exists
-    # print(worksheet.find("January"))
 
 def update_expenses():
     """
@@ -157,12 +99,13 @@ def update_expenses():
             expense()
                 
         except ValueError:
-            print('Make sure you entered (exactly 4) numbers!')
+            print('Make sure you entered ONLY numbers (exactly 4 of them)!')
             print("Try again...")
             print()
             continue
     
         # write to the 'standard' expenses data from google  API spreadsheet
+        print(f"Updating expenses...\n")
         worksheet.update(cells, [input_two])
         print(f"Expenses updated successfully.\n")
         return False
