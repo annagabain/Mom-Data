@@ -135,10 +135,34 @@ def locate_the_budget_cell():
 def update_total():
     print("Updating total...")
 
+
+def locate_the_sum_cell():
+    monthly_sum_cell = standard_worksheet.find(months[int(month_number)-1])
+    return f"F{monthly_sum_cell.row}"
+
+
 def update_monthly_sum():
     print("Updating this month's sum...")
-    monthly_sum = 150
-    return monthly_sum
+
+    result = standard_worksheet.find(months[int(month_number)-1])
+    c_one = f"B{result.row}"
+    c_two = f"C{result.row}"
+    c_three = f"D{result.row}"
+    c_four = f"E{result.row}"
+
+
+    val_one = standard_worksheet.acell(c_one).value
+    val_two = standard_worksheet.acell(c_two).value
+    val_three = standard_worksheet.acell(c_two).value
+    val_four = standard_worksheet.acell(c_two).value
+
+    s = int(val_one) + int(val_two) + int(val_three) + int(val_four)
+
+
+    sum_cell = locate_the_sum_cell()
+    standard_worksheet.update(sum_cell, s)
+
+    return s
 
 
 def update_budget_status():
@@ -206,12 +230,12 @@ def view_expenses():
     """   
     # my 'standard' expenses data from google  API spreadsheet
     print()
-    print("-------------------------------------------------------------")
+    print("-------------------------------------------------------------------------")
     print(f"    Year's Expenses overview: ")
-    print("-------------------------------------------------------------")
+    print("-------------------------------------------------------------------------")
     dataframe = pd.DataFrame(standard_worksheet.get_all_records())
     print(dataframe.to_string(index=False))
-    print("-------------------------------------------------------------")
+    print("-------------------------------------------------------------------------")
 
     print()
 
