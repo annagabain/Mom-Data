@@ -37,9 +37,14 @@ This project is an application developed in Python, that runs in a command-line 
     - ADD
     - BUDGET
     - EXIT
-    
+
 - View the year's overview
 - Add monthly expenses for a specific month (choose from the menu), if existing, update data for that month
+
+- Cat is not a number! ... User input validation
+
+
+<img width="50%" alt="cat is not a number" src="assets/user_input_test_nan.jpg">
 
 ### Potential Features for further implementation:
 
@@ -64,12 +69,13 @@ This project is an application developed in Python, that runs in a command-line 
 
 ### Manual testing
 
-Cat is not a number!
-
-<img width="50%" alt="cat is not a number" src="assets/user_input_test_nan.jpg">
+<img width="100%" alt="testing in the terminal" src="assets/manual_testing.jpg">
 
 ### Debugging
 
+Traceback error in the terminal
+
+<img width="100%" alt="bug months" src="assets/bug_months.jpg">
 
 ## Deployment
 
