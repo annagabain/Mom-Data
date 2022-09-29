@@ -19,14 +19,26 @@ This project is an application developed in Python, that runs in a command-line 
     - [Structure](#structure-flowchart)
     - [Planning](#initial-planning)
 - [Testing](#testing)
-    - [Validators]
-    - 
+    - [Validators](#validators)
+    - [Manual Testing](#manual-testing)
+    - [Debugging](#debugging)
 - [Deployment](#deployment)
 - [Sources & Credits](#sources-and-credits)
 - [Acknowledgemts](#acknowledgements)
 
 ## Features
+- Welcoming introduction
+- Setting the budget
 
+<img width="100%" alt="Main Menu" src="assets/main_menu.jpg">
+
+- Main menu
+    - VIEW
+    - ADD
+    - BUDGET
+    - EXIT
+    
+- View the year's overview
 - Add monthly expenses for a specific month (choose from the menu), if existing, update data for that month
 
 ### Potential Features for further implementation:
