@@ -24,6 +24,7 @@ def set_budget():
     """
     while True:
         print("Please set a Budget\n")
+        global budget 
         budget = input("     e.g. 2500...\n\n")
         print()
         try:
@@ -38,8 +39,8 @@ def set_budget():
             print("Try again...")
             continue
             print()
-        return budget
-
+        return False
+    return budget
 
 def main_menu():
     """
@@ -95,6 +96,7 @@ def locate_the_month_row():
         
         # Choose the expense month...
         print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
+        global month_number
         month_number = input("     - 1  - for January\n     - 2  - for February\n     - 3  - for March\n     - 4  - for April\n     - 5  - for May\n     - 6  - for June\n     - 7  - for July\n     - 8  - for August\n     - 9  - for September\n     - 10 - for October\n     - 11 - for November\n     - 12 - for December\n\n")
         print()
 
@@ -113,11 +115,30 @@ def locate_the_month_row():
         return f"B{result.row}:E{result.row}"
 
 
+def locate_the_budget_status_cell():
+    """
+    Locate the budget status cell for the month that will be updated
+    """
+    
+    result = standard_worksheet.find(months[int(month_number)-1])
+    print(f"Chosen month: {months[int(month_number) -1 ]}\n")
+    return f"F{result.row}"
+
 def update_total():
     print("Updating total...")
 
 def update_budget_status():
     print("Updating the budget status...")
+    #budget - sum to identify budget status
+    budget_status = budget - 100
+
+    cell = str(locate_the_budget_status_cell())
+   
+
+    # standard_worksheet.update(cells, [budget_status])
+    standard_worksheet.update(cell, budget_status)
+
+    return budget_status
 
 
 def update_expenses():
