@@ -48,13 +48,15 @@ def main_menu():
     """
     while True:
         print("Please type... \n")
-        decision_one = input("     - VIEW - to see the year's overview \n     - ADD - to add new expenses or \n     - EXIT - to exit the programme: \n\n").upper()
+        decision_one = input("     - VIEW - to see the year's overview \n     - ADD - to add new expenses or \n     - BUDGET - to change the budget or \n     - EXIT - to exit the programme: \n\n").upper()
         if decision_one == 'EXIT':
             # share()
             print("Goodbye!")
             exit()
         elif decision_one == 'VIEW':
             view_expenses()
+        elif decision_one == 'BUDGET':
+            set_budget()
         elif decision_one == 'ADD':
             update_expenses()
         else:
@@ -129,10 +131,10 @@ def update_expenses():
 
     # Updating specific row from user input
     while True:
-        user_input_two = input("Insert 4 numbers, separated by commas,\n for Food, Transport, Accomodation, Clothing... \n" )
+        four_expense_values = input("Insert 4 numbers, separated by commas,\n for Food, Transport, Accomodation, Clothing... \n" )
         try:
-            # user_input_two = int(user_input_two)
-            input_two = user_input_two.split(",")
+            # four_expense_values = int(four_expense_values)
+            input_two = four_expense_values.split(",")
 
             if len(input_two) != 4:
                 raise ValueError()
