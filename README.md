@@ -5,7 +5,7 @@ The application populates a database from user input, calculates the sum of the 
 
 This project is an application developed in Python, that runs in a command-line and is visually presented through the Heroku platform.
 
-:point_down: Click on the link below for the live view: 
+:point_down: Click the link below for the live view: 
 
 # [Live View](https://mom-data.herokuapp.com/)
 
@@ -39,6 +39,9 @@ This project is an application developed in Python, that runs in a command-line 
     - EXIT
 
 - View the year's overview
+
+<img width="100%" alt="expenses table" src="assets/view.jpg">
+
 - Add monthly expenses for a specific month (choose from the menu), if existing, update data for that month
 
 - Cat is not a number! ... User input validation
