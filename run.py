@@ -42,6 +42,7 @@ def set_budget():
         return False
     return budget
 
+
 def main_menu():
     """
     Enables the user's first decision making: 
@@ -117,26 +118,42 @@ def locate_the_month_row():
 
 def locate_the_budget_status_cell():
     """
-    Locate the budget status cell for the month that will be updated
+    Locate the budget status (budget-sum) cell for the month that will be updated
     """
-    
     result = standard_worksheet.find(months[int(month_number)-1])
-    print(f"Chosen month: {months[int(month_number) -1 ]}\n")
-    return f"F{result.row}"
+    return f"H{result.row}"
+
+
+def locate_the_budget_cell():
+    """
+    Locate the budget cell for the month that will be updated
+    """
+    result = standard_worksheet.find(months[int(month_number)-1])
+    return f"G{result.row}"
+
 
 def update_total():
     print("Updating total...")
 
+def update_monthly_sum():
+    print("Updating this month's sum...")
+    monthly_sum = 150
+    return monthly_sum
+
+
 def update_budget_status():
     print("Updating the budget status...")
     #budget - sum to identify budget status
-    budget_status = budget - 100
+    monthly_sum = update_monthly_sum()
+    budget_status = budget - monthly_sum
 
-    cell = str(locate_the_budget_status_cell())
+    # Finds corresponding column H
+    budget_status_cell = str(locate_the_budget_status_cell())
+    # Finds corresponding column G
+    budget_cell = str(locate_the_budget_cell())
    
-
-    # standard_worksheet.update(cells, [budget_status])
-    standard_worksheet.update(cell, budget_status)
+    standard_worksheet.update(budget_status_cell, budget_status)
+    standard_worksheet.update(budget_cell, budget)
 
     return budget_status
 
@@ -190,7 +207,7 @@ def view_expenses():
     # my 'standard' expenses data from google  API spreadsheet
     print()
     print("-------------------------------------------------------------")
-    print(f"Year's Expenses overview:\n ")
+    print(f"    Year's Expenses overview: ")
     print("-------------------------------------------------------------")
     dataframe = pd.DataFrame(standard_worksheet.get_all_records())
     print(dataframe.to_string(index=False))

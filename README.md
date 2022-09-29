@@ -42,9 +42,13 @@ How to use Pandas: https://datatofish.com/read_excel/
 
 How to Use Google Sheets With Python (2022): https://www.youtube.com/watch?v=bu5wXjz2KvU
 
+Gspread for the project: https://github.com/annagabain/love-sandwiches-walkthrough from Code Institute
+
 Some inspiration from Build A Simple Expense Tracker Using Python: https://www.youtube.com/watch?v=AnKc74fWYCg
 
 How to Validate User Inputs in Python: https://www.youtube.com/watch?v=LUWyA3m_-r0
+
+Global variables: https://www.w3schools.com/python/python_variables_global.asp
 
 ## Acknowledgemts
 
