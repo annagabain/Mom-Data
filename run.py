@@ -50,7 +50,7 @@ def main_menu():
     """
     while True:
         print("Please type... \n")
-        decision_one = input("     - VIEW - to see the year's overview \n     - ADD - to add new expenses or \n     - BUDGET - to change the budget or \n     - EXIT - to exit the programme: \n\n").upper()
+        decision_one = input("     - VIEW - to see the year's overview \n     - ADD - to add new expenses \n     - BUDGET - to change the budget or \n     - EXIT - to exit the programme: \n\n").upper()
         if decision_one == 'EXIT':
             # share()
             print("Goodbye!")

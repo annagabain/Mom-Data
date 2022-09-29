@@ -1,43 +1,72 @@
 # Mom Data
 ## Budget Analysing Tool for the Whole Family
+Mom Data is a user-freindly application for storing, retrieveing and calculating major life expense categories: Food, Transport, Accomodation and Clothing.
+The application populates a database from user input, calculates the sum of the monthly expenses and compares it to the given budget.
 
-The application creates and populates a database from user input
-It's possible to sort data by headings (and filter by budget)
-Budgeting suggestions are given based on headings chosen
+This project is an application developed in Python, that runs in a command-line and is visually presented through the Heroku platform.
 
+:point_down: Click on the link below for the live view: 
 
 # [Live View](https://mom-data.herokuapp.com/)
 
 <img width="100%" alt="I am responsive mom data media sizes" src="assets/am_i_responsive_no_mobile.jpg">
 
-Initial scribbles
 
-<img width="50%" alt="mom data" src="assets/initial_scribble_1.jpg">
-<img width="100%" alt="mom data" src="assets/initial_scribble_2.jpg">
+## Contents:
+- [Features](#features)
+    - [Potential Features](#potential-features-for-further-implementation)
+- [Development Stages](#development-stages)
+    - [Structure](#structure-flowchart)
+    - [Planning](#initial-planning)
+- [Testing](#testing)
+    - [Validators]
+    - 
+- [Deployment](#deployment)
+- [Sources & Credits](#sources-and-credits)
+- [Acknowledgemts](#acknowledgements)
 
-## Potential features:
+## Features
+
 - Add monthly expenses for a specific month (choose from the menu), if existing, update data for that month
+
+### Potential Features for further implementation:
+
 - Each user should be able to create their own worksheet, with some pre-populated data to edit
 - additional to standard expenses, custom categories can be added. Standard categories can be edited or removed
 - Downloading and saving the current data possible
 
+## Development Stages
 
-## Structure Flowchart
+### Structure Flowchart
 
 <img width="100%" alt="Mom Data Structure Flowchart" src="assets/Mom_Data_Lucidchart_01.png">
 
+### Initial planning
 
-## Creating the Heroku app
-
-Connected to GitHub repository and deployed.
+<img width="50%" alt="mom data" src="assets/initial_scribble_1.jpg">
+<img width="100%" alt="mom data" src="assets/initial_scribble_2.jpg">
 
 ## Testing
+
+### Validators
+
+### Manual testing
 
 Cat is not a number!
 
 <img width="50%" alt="cat is not a number" src="assets/user_input_test_nan.jpg">
 
-## Sources
+### Debugging
+
+
+## Deployment
+
+### Creating the Heroku app
+
+Connected to GitHub repository and deployed.
+
+## Sources and Credits
+
 How to use Pandas: https://datatofish.com/read_excel/
 
 How to Use Google Sheets With Python (2022): https://www.youtube.com/watch?v=bu5wXjz2KvU
