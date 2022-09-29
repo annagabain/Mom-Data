@@ -132,37 +132,39 @@ def locate_the_budget_cell():
     return f"G{result.row}"
 
 
-def update_total():
-    print("Updating total...")
-
-
 def locate_the_sum_cell():
+    """
+    Finds the F cell of the corresponding month row
+    """
     monthly_sum_cell = standard_worksheet.find(months[int(month_number)-1])
     return f"F{monthly_sum_cell.row}"
 
 
 def update_monthly_sum():
+    """
+    Finds all the expense values of the corresponding month and adds them up
+    """
     print("Updating this month's sum...")
 
     result = standard_worksheet.find(months[int(month_number)-1])
-    c_one = f"B{result.row}"
-    c_two = f"C{result.row}"
-    c_three = f"D{result.row}"
-    c_four = f"E{result.row}"
+    #Find indicidual cells
+    cell_one = f"B{result.row}"
+    cell_two = f"C{result.row}"
+    cell_three = f"D{result.row}"
+    cell_four = f"E{result.row}"
 
+    # Find each cell values
+    val_one = standard_worksheet.acell(cell_one).value
+    val_two = standard_worksheet.acell(cell_two).value
+    val_three = standard_worksheet.acell(cell_three).value
+    val_four = standard_worksheet.acell(cell_four).value
 
-    val_one = standard_worksheet.acell(c_one).value
-    val_two = standard_worksheet.acell(c_two).value
-    val_three = standard_worksheet.acell(c_two).value
-    val_four = standard_worksheet.acell(c_two).value
-
-    s = int(val_one) + int(val_two) + int(val_three) + int(val_four)
-
+    month_sum = int(val_one) + int(val_two) + int(val_three) + int(val_four)
 
     sum_cell = locate_the_sum_cell()
-    standard_worksheet.update(sum_cell, s)
+    standard_worksheet.update(sum_cell, month_sum)
 
-    return s
+    return month_sum
 
 
 def update_budget_status():
@@ -215,7 +217,6 @@ def update_expenses():
         # write to the 'standard' expenses data from google  API spreadsheet
         print(f"Updating expenses...")
         worksheet.update(cells, [input_two])
-        update_total()
         update_budget_status()
         print(f"Expenses updated successfully.\n")
 
