@@ -29,6 +29,7 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
     - [Manual Testing](#manual-testing)
     - [Debugging](#debugging)
 - [Deployment](#deployment)
+    - [Heroku](#creating-the-heroku-app)
 - [Sources & Credits](#sources-and-credits)
 - [Acknowledgments](#acknowledgments)
 
@@ -175,46 +176,27 @@ Budget bug
 
 ## Deployment
 
-Playing on a Local machine or via Gitpod Terminal:
+The project is deployed to GitHub via Gitpod Terminal with integrate VScode editor. Then it is connected to the Heroku app to be reached via a web browser for user convenience. To enable this, a special Code Institute template was cloned and used https://github.com/Code-Institute-Org/python-essentials-template .
 
-This project was developed by forking a specialized Code Institute template that simulates a terminal in the web browser. Due to this, I optimized the game to work via the final Heroku deployment, and I do not recommend playing it locally. That said, I have included this section to give you a choice.
-
-    Navigate to the GitHub repository, and follow these steps to clone the project into your IDE of choice.
-        Gitpod only requires you to have the web extension installed and click the green Gitpod button from the repositories main page. If you are using Gitpod please skip step 2 below as you do not require a virtual environment to protect your machine.
-
-    Create the virtual environment with the terminal command "python3 -m venv venv". Once complete add the "venv" file to you're ".gitignore" file and use the terminal command "venv\Scripts\activate.bat" to activate it.
-        IMPORTANT If developing locally on your device, ensure you set up/activate the virtual environment before installing/generating the requirements.txt file; failure to do this will pollute your machine and put other projects at
-
-    Install the requirements listed in requirements.txt using the terminal command "pip3 install -r requirements.txt"
-        Kindly note that since I developed the project from scratch and installed the required libraries as progressed I have already included a requirements.txt for this app by using the terminal command "pip3 freeze > requirements.txt" to generate it.
-
-Final Deployment to Heroku:
-
-The project was deployed to Heroku using the below procedure:-
-
-    Log in to Heroku or create an account if required.
-    click the button labeled New from the dashboard in the top right corner, just below the header.
-    From the drop-down menu select "Create new app".
-    Enter a unique app name. I combined my GitHub user name and the game's name with a dash between them (dnlbowers-battleship) for this project.
-    Once the web portal shows the green tick to confirm the name is original select the relevant region. In my case, I chose Europe as I am in Malta.
-    When happy with your choice of name and that the correct region is selected, click on the "Create app" button.
-    This will bring you to the project "Deploy" tab. From here, navigate to the settings tab and scroll down to the "Config Vars" section.
-    Click the button labelled "Reveal Config Vars" and enter the "key" as port, the "value" as 8000 and click the "add" button.
-    Scroll down to the buildpacks section of the settings page and click the button labeled " add buildpack," select "Python," and click "Save Changes".
-    Repeat step 11 but this time add "node.js" instead of python.
-        IMPORTANT The buildpacks must be in the correct order. If node.js is listed first under this section, you can click on python and drag it upwards to change it to the first buildpack in the list.
-    Scroll back to the top of the settings page, and navigate to the "Deploy" tab.
-    From the deploy tab select Github as the deployment method.
-    Confirm you want to connect to GitHub.
-    Search for the repository name and click the connect button next to the intended repository.
-    From the bottom of the deploy page select your preferred deployment type by follow one of the below steps:
-        Clicking either "Enable Automatic Deploys" for automatic deployment when you push updates to Github.
-        Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment.
-
+The code is placed in run.py file and dependencies are placed in the requirements.txt file. The steps of Heroku deployment were taken from the Code Institute  Love Sandwiches walkthrough project, step by step as required.
 
 ### Creating the Heroku app
 
-Connected to GitHub repository and deployed.
+The project was deployed to Heroku as follows:
+
+- Create an account and log into heroku.com
+- Click 'New' from the dashboard, and from the drop-down menu select "Create new app"
+- Make a unique app name: mom-data
+Choose a relevant geographical region, Europe
+- Click "Create app"
+- In the settings menu, go to "Config Vars" section
+- Click "Reveal Config Vars", where type "key" for port, "value" for 8000 and click "add"
+- Add "Python" first and then "node.js" buildpacks
+- In "Deploy" tab, select Github as the deployment method
+- Connect to GitHub
+- Find the project repository and click "connect" next to it
+- "Enable Automatic Deploys" for automatic deployment with every new change
+
 
 ## Sources and Credits
 
