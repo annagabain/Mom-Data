@@ -33,7 +33,7 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
     - [Debugging](#debugging)
 - [Deployment](#deployment)
     - [Heroku](#creating-the-heroku-app)
-- [Sources & Credits](#sources-and-credits)
+- [Sources & Credits](#sources)
 - [Acknowledgments](#acknowledgments)
 
 ## UX
@@ -42,6 +42,8 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
 The application is intended, foremost for mothers that keep the family budget. However, it is suitable for wide audiences, practically everyone who is willing to document and keep track of their periodic life expenses. Mom Data is intuitive to use and guides the user through the process with input validations and recurring main menu. The project is kept simple to make sure the users can dedicate very little time and achieve desired results. A very important feature, especially for working mothers with children.
 
 NOTE: !! *MOM DATA app runs on PC-s or Laptops and is not suitable for mobile _phones and _is _not__ recommended on_ tablets.*
+
+:point_up_2: [Back to Contents](#contents)
 
 ## Features
 
@@ -91,6 +93,7 @@ After a successful update, the user can choose to view the current expense data,
 
 <img width="100%" alt="cat is not a number" src="assets/future_features_1.jpg">
 
+:point_up_2: [Back to Contents](#contents)
 
 ## Development Stages
 
@@ -126,6 +129,7 @@ Pandas library was necessary for the implementation of the project. Pandas is a 
 
 Gspread is a Python API for Google Sheets, which was used to store and retrieve the data of the application.
 
+:point_up_2: [Back to Contents](#contents)
 
 ## Testing
 ### Manual testing
@@ -228,6 +232,8 @@ Solution: The bug was solved simply by removing the (B)UDGET option from the mai
 
 ---
 
+:point_up_2: [Back to Contents](#contents)
+
 ## Deployment
 
 The project is deployed to GitHub via Gitpod Terminal with an integrated VScode editor. Then it is connected to the Heroku app to be reached via a web browser for user convenience. To enable this, a special Code Institute template was cloned and used https://github.com/Code-Institute-Org/python-essentials-template .
@@ -251,6 +257,7 @@ The project was deployed to Heroku as follows:
 - Find the project repository and click "connect" next to it
 - "Enable Automatic Deploys" for automatic deployment with every new change
 
+:point_up_2: [Back to Contents](#contents)
 
 ## Sources
 
@@ -276,7 +283,7 @@ Development environment with integrated Visual Studio Code editor - https://www.
 
 Am I responsive, testing usability across different devices: https://ui.dev/amiresponsive
 
-
+:point_up_2: [Back to Contents](#contents)
 
 ## Acknowledgments
 
