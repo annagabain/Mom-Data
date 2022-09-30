@@ -136,6 +136,8 @@ Deliberately inputted false data, 'bullet proved' the application to be prone to
 
 <img width="100%" alt="testing in the terminal" src="assets/manual_testing.jpg">
 
+---
+
 Method: 'breaking' by false input, then adding functions to prevent it 
 
 Test: running the app after each major change (e.g. new function)
@@ -155,14 +157,19 @@ Method: Terminal errors and problems indicate the code line that is to be fixed.
 
 Test: go to the line seen in the error message and fix it manually or with the above-mentioned print() statement.
 
-Result: it took several to one attempts to eliminate the error messages and continue running the programme.
+Result: it took several attempts to eliminate the error messages and continue running the programme.
 
+---
 
 ### Validators
 
 - PEP8
 
+For the time of the final project testing, an intended Python code validation through http://pep8online.com/ was not possible due to technical issues with the website itself. Therefore a suggested workaround was implemented.
+
 <img width="100%" alt="screenshot with PEP8 issue" src="assets/pep_issue.jpg">
+
+Following the suggested steps, some indentation and white space issues were detected and solved manually.
 
 <img width="100%" alt="screenshot with PEP8 problems" src="assets/pep8_check.jpg">
 
@@ -246,6 +253,14 @@ How to Validate User Inputs in Python: https://www.youtube.com/watch?v=LUWyA3m_-
 Global variables: https://www.w3schools.com/python/python_variables_global.asp
 
 Flowchart: https://lucid.app/
+
+Project Repository: https://github.com/
+
+Development environment with integrated Visual Studio Code editor - https://www.gitpod.io/
+
+Am I responsive, testing usability across different devices: https://ui.dev/amiresponsive
+
+
 
 ## Acknowledgments
 
