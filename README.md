@@ -34,6 +34,8 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
 
 The application is intended, foremost for mothers that keep the family budget. However, it is suitable for wide audiences, practically everyone who is willing to document and keep track of their periodic life expenses. Mom Data is intuitive to use and guides the user through the process with input validations and recurring main menu. The project is kept simple to make sure the users can dedicate very little time and achieve desired results. A very important feature, especially for working mothers with children.
 
+!! *MOM DATA app runs on PC-s or Laptops and is not suitable for mobile _phones and _is _not__ recommended on_ tablets.*
+
 ## Features
 
 ### Welcoming introduction
@@ -52,7 +54,7 @@ ADD
 
 EXIT
 
-- Upon typing the letter V (or v, that is accepted by the programme as well), the user immediately sees the current table demonstrating the year's expenses overview. The data is already saved during the previous inputs.
+- Upon typing the letter V (or v, which is accepted by the programme as well), the user immediately sees the current table demonstrating the year's expenses overview. The data is already saved during the previous inputs.
 
 <img width="100%" alt="expenses table" src="assets/view.jpg">
 
@@ -60,7 +62,7 @@ To continue with the application, the main menu again offers to choose between t
 
 - To add new expenses, the user simply enters A (or a). The menu asks to choose an expense month by typing the corresponding numbers. Here it is important to make sure the input leads to the correct location in the database. So if the user enters a wrong number, that does not represent any month, the app will encourage trying over and over again until a specific month is chosen.
 
-Cat is not a number! ... User input validation
+*Cat is not a number! ... User input validation*
 
 <img width="50%" alt="cat is not a number" src="assets/user_input_test_nan.jpg">
 
@@ -73,9 +75,9 @@ After a successful update, the user can choose to view the current expense data,
 
 ### Future Features:
 
-- Each user should be able to create their worksheet, with some pre-populated data to edit
-- additional to standard expenses, and custom categories can be added. Standard categories can be edited or removed
-- Downloading and saving the current data possible
+- Currently, Mom Data works with an existing, prepopulated worksheet, stored on Google API. In a future implementation, each user should be able to create an individual worksheet.
+- Additional to standard expenses, custom categories will be added. A possibility will be introduced to edit or remove the Standard categories.
+- Downloading and saving the current data will be made possible. At the moment only sharing option can be added, however, due to complications with a request of opening an own google account, it was decided to leave this option open.
 
 <img width="100%" alt="cat is not a number" src="assets/future_features_1.jpg">
 
