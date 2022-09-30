@@ -62,7 +62,7 @@ This project is an application developed in Python, that runs in a command-line 
 
 ### Structure
 
-<img width="100%" alt="Mom Data Structure" src="assets/structure.jpg">
+<img width="50%" alt="Mom Data Structure" src="assets/structure.jpg">
 
 <img width="100%" alt="Mom Data Structure Flowchart" src="assets/Mom_Data_Lucidchart_01.png">
 
@@ -84,6 +84,14 @@ This project is an application developed in Python, that runs in a command-line 
 Traceback error in the terminal
 
 <img width="100%" alt="bug months" src="assets/bug_months.jpg">
+
+F-string bugs
+
+<img width="100%" alt="bug" src="assets/bug_f_string.jpg">
+
+Budget bug
+
+<img width="100%" alt="bug" src="assets/bug_budget.jpg">
 
 ## Deployment
 

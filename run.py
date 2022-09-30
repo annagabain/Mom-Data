@@ -30,6 +30,9 @@ months = ["January",
 
 
 def print_months():
+    """
+    Print the months for the choose_month_menu
+    """
     i = 1
     for month in months:
         print(f"- {i} - for {month}")
@@ -42,7 +45,7 @@ def set_budget():
     """
     while True:
         print(f"Please set a Budget for {months[int(month_number) -1 ]},")
-        global budget 
+        global budget
         budget = input("e.g. 2500...\n\n")
         print()
         try:
@@ -56,65 +59,56 @@ def set_budget():
             print()
             print("Try again...")
             continue
-            print()
         return False
     return budget
 
 
 def main_menu():
     """
-    Enables the user's first decision making: 
+    Enables the user's first decision making:
     input to add new expenses or to view the existing expenses
     """
     while True:
         print("Please type... \n")
         print("     - (V)IEW - to see the year's overview")
         print("     - (A)DD - to add new expenses")
-        print("     - (B)UDGET - to change the budget or")
-        print("     - (E)XIT - to exit the programme:")
+        print("     - (E)XIT - to exit the programme")
         
-
-        decision_one = input().upper()
-        if decision_one == 'E':
-            # share()
+        menu_input = input().upper()
+        if menu_input == 'E':
             print("Goodbye!")
             exit()
-        elif decision_one == 'V':
+        elif menu_input == 'V':
             view_expenses()
-        elif decision_one == 'B':
-            set_budget()
-        elif decision_one == 'A':
+        elif menu_input == 'A':
             update_expenses()
         else:
             print("Invalid input, please try again: \n")
             main_menu()
-    
+
 
 def intro_title():
     """
     Runs when the programme starts
     """
-    print(f"\n=========   Hello and welcome to MOM DATA   =========\n")
-    print(f"Here you can get insights about your monthly expenses\n")
-    print(f"=====================================================\n")
+    print("\n=========   Hello and welcome to MOM DATA   =========\n")
+    print("Here you can get insights about your monthly expenses\n")
+    print("=====================================================\n")
     print()
 
     main_menu()
 
 
-def locate_the_month_row():
+def choose_month_menu():
     """
     Choose the month and locate the row that will be updated
     """
-    worksheet = SHEET.worksheet("standard")   
-    
+    worksheet = SHEET.worksheet("standard")
     while True:
-        
         # Choose the expense month...
         print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
-        # print(print_months())
-        menu_months = print_months()
-        print(menu_months)
+        print_months()
+        print()
         global month_number
         month_number = input()
         print()
@@ -138,7 +132,8 @@ def locate_the_month_row():
 
 def locate_the_budget_status_cell():
     """
-    Locate the budget status (budget-sum) cell for the month that will be updated
+    Locate the budget status (budget-sum) cell 
+    for the month that will be updated
     """
     result = standard_worksheet.find(months[int(month_number)-1])
     return f"H{result.row}"
@@ -198,7 +193,7 @@ def update_budget_status():
 
     budget_status_cell = str(locate_the_budget_status_cell())
     budget_cell = str(locate_the_budget_cell())
-   
+    
     standard_worksheet.update(budget_status_cell, budget_status)
     standard_worksheet.update(budget_cell, budget)
 
@@ -212,12 +207,15 @@ def update_expenses():
     Update the Standard Expenses sheet cells retrieved 
     from locate_the_month_row function
     """
-    cells = str(locate_the_month_row())
+    cells = str(choose_month_menu())
     worksheet = SHEET.worksheet("standard")
 
     # Updating specific row from user input
     while True:
-        four_expense_values = input("Insert 4 numbers, separated by commas,\n for Food, Transport, Accomodation, Clothing... \n" )
+        print("Insert 4 numbers, separated by commas,")
+        print("for Food, Transport, Accomodation, Clothing... \n")
+        
+        four_expense_values = input()
         try:
             # four_expense_values = int(four_expense_values)
             input_two = four_expense_values.split(",")
@@ -229,22 +227,19 @@ def update_expenses():
                 for expense in input_two:
                     expense = int(expense)
             expense()
-                
         except ValueError:
             print('Make sure you entered ONLY numbers (exactly 4 of them)!')
             print("Try again...")
             print()
             continue
-    
+
         # write to the 'standard' expenses data from google  API spreadsheet
-        print(f"Updating expenses...")
+        print("Updating expenses...")
         worksheet.update(cells, [input_two])
         update_budget_status()
-        print(f"Expenses updated successfully.\n")
-
-        return False
-    
-    main_menu()
+        print("Expenses updated successfully.\n")
+        # return False
+        main_menu()
 
 
 def view_expenses():
@@ -253,12 +248,12 @@ def view_expenses():
     """
     # my 'standard' expenses data from google  API spreadsheet
     print()
-    print("-------------------------------------------------------------------------")
-    print(f"    Year's Expenses overview: ")
-    print("-------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
+    print("    Year's Expenses overview: ")
+    print("------------------------------------------------------------------")
     dataframe = pd.DataFrame(standard_worksheet.get_all_records())
     print(dataframe.to_string(index=False))
-    print("-------------------------------------------------------------------------")
+    print("------------------------------------------------------------------")
 
     print()
 
