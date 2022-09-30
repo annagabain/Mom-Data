@@ -69,7 +69,6 @@ This is the third Portfolio Project in frames of Code Institute Full Stack Web D
 
 ### Initial planning
 
-<img width="50%" alt="mom data" src="assets/initial_scribble_1.jpg">
 <img width="100%" alt="mom data" src="assets/initial_scribble_2.jpg">
 <img width="50%" alt="Mom Data Initial Structure Flowchart" src="assets/Mom_Data_Lucidchart_old.png">
 
@@ -97,7 +96,7 @@ PEP8
 ### Debugging
 
 Bug:
-Why:
+Cause:
 Solution:
 
 Traceback error in the terminal
