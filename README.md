@@ -1,9 +1,11 @@
 # Mom Data
 ## Budget Analysing Tool for the Whole Family
-Mom Data is a user-freindly application for storing, retrieveing and calculating major life expense categories: Food, Transport, Accomodation and Clothing.
-The application populates a database from user input, calculates the sum of the monthly expenses and compares it to the given budget.
 
-This project is an application developed in Python, that runs in a command-line and is visually presented through the Heroku platform.
+Mom Data is a user-freindly application for storing, retrieveing and calculating major life expense categories: Food, Transport, Accomodation and Clothing. Mom Data is for family budget keepers. It aims to provide a clear overview on their monthly expenses thorough the year. 
+
+The application populates a database from user input, calculates the sum of the monthly expenses and compares it to the given budget. It gives a clear user guidance and feedback about the inputs, checks the data to be valid and that the programme flows uninterupted until the user choses to end it.
+
+This is the third Portfolio Project in frames of Code Institute Full Stack Web Developer Course Assessment. It is for educational purposes, is developed in Python programming language, that runs in a command-line terminal that is visually presented through the Heroku platform. Further tools and languages will be implemented for the consequent projects.
 
 :point_down: Click the link below for the live view: 
 
@@ -28,14 +30,12 @@ This project is an application developed in Python, that runs in a command-line 
 
 ## Features
 - Welcoming introduction
-- Setting the budget
 
 <img width="100%" alt="Main Menu" src="assets/main_menu.jpg">
 
 - Main menu
     - VIEW
     - ADD
-    - BUDGET
     - EXIT
 
 - View the year's overview
