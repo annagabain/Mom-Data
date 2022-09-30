@@ -14,7 +14,7 @@ This project is an application developed in Python, that runs in a command-line 
 
 ## Contents:
 - [Features](#features)
-    - [Potential Features](#potential-features-for-further-implementation)
+    - [Future Features](#future-features)
 - [Development Stages](#development-stages)
     - [Structure](#structure-flowchart)
     - [Planning](#initial-planning)
@@ -49,15 +49,20 @@ This project is an application developed in Python, that runs in a command-line 
 
 <img width="50%" alt="cat is not a number" src="assets/user_input_test_nan.jpg">
 
-### Potential Features for further implementation:
+### Future Features:
 
 - Each user should be able to create their own worksheet, with some pre-populated data to edit
 - additional to standard expenses, custom categories can be added. Standard categories can be edited or removed
 - Downloading and saving the current data possible
 
+<img width="100%" alt="cat is not a number" src="assets/future_features_1.jpg">
+
+
 ## Development Stages
 
-### Structure Flowchart
+### Structure
+
+<img width="100%" alt="Mom Data Structure" src="assets/structure.jpg">
 
 <img width="100%" alt="Mom Data Structure Flowchart" src="assets/Mom_Data_Lucidchart_01.png">
 

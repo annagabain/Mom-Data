@@ -15,7 +15,25 @@ SHEET = GSPREAD_CLIENT.open('mom_expenses')
 
 # Open a sheet from a google API spreadsheet
 standard_worksheet = SHEET.worksheet("standard")
-months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+months = ["January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"]
+
+
+def print_months():
+    i = 1
+    for month in months:
+        print(f"- {i} - for {month}")
+        i += 1
 
 
 def set_budget():
@@ -23,9 +41,9 @@ def set_budget():
     Setting the monthly budget
     """
     while True:
-        print("Please set a Budget\n")
+        print(f"Please set a Budget for {months[int(month_number) -1 ]},")
         global budget 
-        budget = input("     e.g. 2500...\n\n")
+        budget = input("e.g. 2500...\n\n")
         print()
         try:
             budget = int(budget)
@@ -50,16 +68,22 @@ def main_menu():
     """
     while True:
         print("Please type... \n")
-        decision_one = input("     - VIEW - to see the year's overview \n     - ADD - to add new expenses \n     - BUDGET - to change the budget or \n     - EXIT - to exit the programme: \n\n").upper()
-        if decision_one == 'EXIT':
+        print("     - (V)IEW - to see the year's overview")
+        print("     - (A)DD - to add new expenses")
+        print("     - (B)UDGET - to change the budget or")
+        print("     - (E)XIT - to exit the programme:")
+        
+
+        decision_one = input().upper()
+        if decision_one == 'E':
             # share()
             print("Goodbye!")
             exit()
-        elif decision_one == 'VIEW':
+        elif decision_one == 'V':
             view_expenses()
-        elif decision_one == 'BUDGET':
+        elif decision_one == 'B':
             set_budget()
-        elif decision_one == 'ADD':
+        elif decision_one == 'A':
             update_expenses()
         else:
             print("Invalid input, please try again: \n")
@@ -75,16 +99,7 @@ def intro_title():
     print(f"=====================================================\n")
     print()
 
-    set_budget()
     main_menu()
-
-
-def share():
-    """
-    Share the worksheet with the user
-    """
-    SHEET.share('user@example.com', perm_type='user', role='writer')
-    print(f"Shared successfully.\n")
 
 
 def locate_the_month_row():
@@ -97,8 +112,11 @@ def locate_the_month_row():
         
         # Choose the expense month...
         print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
+        # print(print_months())
+        menu_months = print_months()
+        print(menu_months)
         global month_number
-        month_number = input("     - 1  - for January\n     - 2  - for February\n     - 3  - for March\n     - 4  - for April\n     - 5  - for May\n     - 6  - for June\n     - 7  - for July\n     - 8  - for August\n     - 9  - for September\n     - 10 - for October\n     - 11 - for November\n     - 12 - for December\n\n")
+        month_number = input()
         print()
 
         try:
@@ -110,9 +128,11 @@ def locate_the_month_row():
             print("Try again...")
             print()
             continue
-        
+
         result = worksheet.find(months[int(month_number)-1])
         print(f"Chosen month: {months[int(month_number) -1 ]}\n")
+        set_budget()
+
         return f"B{result.row}:E{result.row}"
 
 
@@ -147,7 +167,7 @@ def update_monthly_sum():
     print("Updating this month's sum...")
 
     result = standard_worksheet.find(months[int(month_number)-1])
-    #Find indicidual cells
+    # Find indicidual cells
     cell_one = f"B{result.row}"
     cell_two = f"C{result.row}"
     cell_three = f"D{result.row}"
@@ -168,14 +188,15 @@ def update_monthly_sum():
 
 
 def update_budget_status():
+    """
+    Updates the budget status, that is a result of the difference between
+    the given budget and the sum of all expenses during the given month
+    """
     print("Updating the budget status...")
-    #budget - sum to identify budget status
     monthly_sum = update_monthly_sum()
     budget_status = budget - monthly_sum
 
-    # Finds corresponding column H
     budget_status_cell = str(locate_the_budget_status_cell())
-    # Finds corresponding column G
     budget_cell = str(locate_the_budget_cell())
    
     standard_worksheet.update(budget_status_cell, budget_status)
@@ -188,7 +209,8 @@ def update_expenses():
     """
     Collect the 'standard' expenses data from the user
     Validate the input
-    Update the Standard Expenses sheet cells retrieved from locate_the_month_row function
+    Update the Standard Expenses sheet cells retrieved 
+    from locate_the_month_row function
     """
     cells = str(locate_the_month_row())
     worksheet = SHEET.worksheet("standard")
@@ -228,7 +250,7 @@ def update_expenses():
 def view_expenses():
     """
     View the existing expenses
-    """   
+    """
     # my 'standard' expenses data from google  API spreadsheet
     print()
     print("-------------------------------------------------------------------------")
