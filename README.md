@@ -19,6 +19,9 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
 - [Features](#features)
     - [Welcoming Intro](#welcoming-introduction)
     - [Main Menu](#main-menu)
+    - [(V)IEW](#view)
+    - [(A)DD](#add)
+    - [(E)XIT](#exit)
     - [Future Features](#future-features)
 - [Development Stages](#development-stages)
     - [Planning](#initial-planning)
@@ -58,12 +61,14 @@ ADD
 
 EXIT
 
+### (V)IEW
 - Upon typing the letter V (or v, which is accepted by the programme as well), the user immediately sees the current table demonstrating the year's expenses overview. The data is already saved during the previous inputs.
 
 <img width="100%" alt="expenses table" src="assets/view.jpg">
 
 To continue with the application, the main menu again offers to choose between the categories view, add and exit.
 
+### (A)DD
 - To add new expenses, the user simply enters A (or a). The menu asks to choose an expense month by typing the corresponding numbers. Here it is important to make sure the input leads to the correct location in the database. So if the user enters a wrong number, that does not represent any month, the app will encourage trying over and over again until a specific month is chosen.
 
 *Cat is not a number! ... User input validation*
@@ -75,6 +80,7 @@ Upon choosing the desired month, Mom Data would like to know the budget to compa
 <img width="100%" alt="add expenses screenshot" src="assets/add_budget_and_expenses.jpg">
 After a successful update, the user can choose to view the current expense data, including the recent input, add new expenses, or simply exit the programme.
 
+### (E)XIT
 - Exiting the app is easy and requires typing the initial E(or e). A friendly and concise **'Goodbye'** message signals the current budgeting session has been closed.
 
 ### Future Features:
@@ -176,21 +182,21 @@ Budget bug
 
 ## Deployment
 
-The project is deployed to GitHub via Gitpod Terminal with integrate VScode editor. Then it is connected to the Heroku app to be reached via a web browser for user convenience. To enable this, a special Code Institute template was cloned and used https://github.com/Code-Institute-Org/python-essentials-template .
+The project is deployed to GitHub via Gitpod Terminal with an integrated VScode editor. Then it is connected to the Heroku app to be reached via a web browser for user convenience. To enable this, a special Code Institute template was cloned and used https://github.com/Code-Institute-Org/python-essentials-template .
 
-The code is placed in run.py file and dependencies are placed in the requirements.txt file. The steps of Heroku deployment were taken from the Code Institute  Love Sandwiches walkthrough project, step by step as required.
+The code is placed in run.py file and dependencies are placed in the requirements.txt file. The instruction on Heroku deployment was taken from the Code Institute Love Sandwiches walkthrough project, step by step as required.
 
 ### Creating the Heroku app
 
 The project was deployed to Heroku as follows:
 
-- Create an account and log into heroku.com
+- Create an account and log into https://www.heroku.com/
 - Click 'New' from the dashboard, and from the drop-down menu select "Create new app"
 - Make a unique app name: mom-data
-Choose a relevant geographical region, Europe
+- Choose a relevant geographical region, Europe
 - Click "Create app"
 - In the settings menu, go to "Config Vars" section
-- Click "Reveal Config Vars", where type "key" for port, "value" for 8000 and click "add"
+- Click "Reveal Config Vars", where type port for "key", 8000 for "value" and click "add"
 - Add "Python" first and then "node.js" buildpacks
 - In "Deploy" tab, select Github as the deployment method
 - Connect to GitHub
@@ -198,13 +204,15 @@ Choose a relevant geographical region, Europe
 - "Enable Automatic Deploys" for automatic deployment with every new change
 
 
-## Sources and Credits
+## Sources
 
 How to use Pandas: https://datatofish.com/read_excel/
 
 How to Use Google Sheets With Python (2022): https://www.youtube.com/watch?v=bu5wXjz2KvU
 
 Gspread for the project: https://github.com/annagabain/love-sandwiches-walkthrough from Code Institute
+
+Creating the worksheet on: https://docs.google.com/
 
 Some inspiration from Build A Simple Expense Tracker Using Python: https://www.youtube.com/watch?v=AnKc74fWYCg
 
@@ -216,6 +224,8 @@ Flowchart: https://lucid.app/
 
 ## Acknowledgments
 
-Richard Wells - course mentor for friendly guidance, help with refactoring some code and feedback on the project
+Richard Wells - the course mentor for friendly guidance, help with refactoring some code and numerous project feedback sessions
 
-Jakob Lövhall - providing warm support, including babysitting most evenings to allow more time for the project
+Jakob Lövhall - for providing support, including babysitting evenings to allow more time for the project, as well as acting as a test user
+
+Johannes Lövhall - for testing the app as a user to reveal bugs and being asked to break it with incredible inputs
