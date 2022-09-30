@@ -17,10 +17,13 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
 ## Contents:
 - [UX](#ux)
 - [Features](#features)
+    - [Welcoming Intro](#welcoming-introduction)
+    - [Main Menu](#main-menu)
     - [Future Features](#future-features)
 - [Development Stages](#development-stages)
-    - [Structure](#structure-flowchart)
     - [Planning](#initial-planning)
+    - [Structure](#structure-flowchart)
+    - [Using Libraries](#using-libraries)
 - [Testing](#testing)
     - [Validators](#validators)
     - [Manual Testing](#manual-testing)
@@ -34,7 +37,7 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
 
 The application is intended, foremost for mothers that keep the family budget. However, it is suitable for wide audiences, practically everyone who is willing to document and keep track of their periodic life expenses. Mom Data is intuitive to use and guides the user through the process with input validations and recurring main menu. The project is kept simple to make sure the users can dedicate very little time and achieve desired results. A very important feature, especially for working mothers with children.
 
-!! *MOM DATA app runs on PC-s or Laptops and is not suitable for mobile _phones and _is _not__ recommended on_ tablets.*
+NOTE: !! *MOM DATA app runs on PC-s or Laptops and is not suitable for mobile _phones and _is _not__ recommended on_ tablets.*
 
 ## Features
 
@@ -66,7 +69,7 @@ To continue with the application, the main menu again offers to choose between t
 
 <img width="50%" alt="cat is not a number" src="assets/user_input_test_nan.jpg">
 
-Upon choosing the desired month, Mom Data would like to know the budget to compare the expenses with. The user input updates the expenses for that month.
+Upon choosing the desired month, Mom Data would like to know the budget to compare the expenses with. The user input is taken to update the expenses for that month.
 
 <img width="100%" alt="add expenses screenshot" src="assets/add_budget_and_expenses.jpg">
 After a successful update, the user can choose to view the current expense data, including the recent input, add new expenses, or simply exit the programme.
@@ -77,12 +80,38 @@ After a successful update, the user can choose to view the current expense data,
 
 - Currently, Mom Data works with an existing, prepopulated worksheet, stored on Google API. In a future implementation, each user should be able to create an individual worksheet.
 - Additional to standard expenses, custom categories will be added. A possibility will be introduced to edit or remove the Standard categories.
-- Downloading and saving the current data will be made possible. At the moment only sharing option can be added, however, due to complications with a request of opening an own google account, it was decided to leave this option open.
+- Downloading and saving the current data will be made possible. At the moment a sharing option can be added only, however, due to complications with a request of opening an own google account, it was decided to leave this option open.
 
 <img width="100%" alt="cat is not a number" src="assets/future_features_1.jpg">
 
 
 ## Development Stages
+
+### Initial planning
+
+Initially, the main expense categories (Food, Transport, Accommodation, Clothing) were taken from the author's previous project, JavaScript budget calculator https://github.com/annagabain/Mom-Calculator . So was the target user and general functionality inherited to demonstrate a connection between the projects. However, the implementations in Python differ from those in JavaScript. 
+
+<img width="100%" alt="mom data" src="assets/initial_scribble_2.jpg">
+
+*The initial flowchart focused on expense categories rather than budget months* 
+
+<img width="70%" alt="Mom Data Initial Structure Flowchart" src="assets/Mom_Data_Lucidchart_old.png">
+
+Later on, during the project development, it became evident the use of budget comparison was connected to a specific month, and the app flow changed accordingly.
+
+
+### Structure
+
+<img width="100%" alt="Mom Data Structure Flowchart" src="assets/mom_data_lucidchart_final.png">
+
+Main functions
+
+<img width="50%" alt="Mom Data Structure" src="assets/structure.jpg">
+
+
+
+### Using Libraries
+
 Document the rationale as to why a particular library/libraries are necessary for the implementation of the project.
 Pandas
 
@@ -92,17 +121,6 @@ Pandas is used to analyze data.
 
 Gspread
 
-### Structure
-
-<img width="50%" alt="Mom Data Structure" src="assets/structure.jpg">
-
-<img width="100%" alt="Mom Data Structure Flowchart" src="assets/mom_data_lucidchart_final.png">
-
-
-### Initial planning
-
-<img width="100%" alt="mom data" src="assets/initial_scribble_2.jpg">
-<img width="50%" alt="Mom Data Initial Structure Flowchart" src="assets/Mom_Data_Lucidchart_old.png">
 
 ## Testing
 
