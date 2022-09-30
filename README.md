@@ -167,7 +167,7 @@ Result: it took several attempts to eliminate the error messages and continue ru
 
 For the time of the final project testing, an intended Python code validation through http://pep8online.com/ was not possible due to technical issues with the website itself. Therefore a suggested workaround was implemented.
 
-<img width="100%" alt="screenshot with PEP8 issue" src="assets/pep_issue.jpg">
+<img width="70%" alt="screenshot with PEP8 issue" src="assets/pep_issue.jpg">
 
 Following the suggested steps, some indentation and white space issues were detected and solved manually.
 
@@ -176,41 +176,57 @@ Following the suggested steps, some indentation and white space issues were dete
 
 ### Debugging
 
-- Traceback error in the terminal
+*Traceback error in the terminal*
 
 <img width="100%" alt="bug months" src="assets/bug_months.jpg">
 
-Bug:
-Cause:
-Solution:
+Bug: the programme could not access the 'months' list
 
-- Months menu bug
+Cause: the list was placed in another function's scope
+
+Solution: 'months' list is put in the global scope, as it is frequently used by several functions in the programme
+
+---
+
+*Months menu bug*
 
 <img width="100%" alt="bug" src="assets/bug_month_number.jpg">
 
-Bug:
-Cause:
+Bug: the choose_months_menu contains 12 months accessible through numbers 1 to 12. The user types 13 and the programme could not find that number.
+
+Cause: This input was validated against data type only, let's say if the user typed in some words or any other signs, but not for numbers out of range, i.e. smaller than 1 and larger than 12
+
 Solution:
+*Validate the range between 1 and 12*
 
 <img width="100%" alt="bug" src="assets/bug_month_number_fixed.jpg">
 
+---
 
-- F-string bugs
+*F-string bugs*
 
 <img width="100%" alt="bug" src="assets/bug_f_string.jpg">
 
-Bug:
-Cause:
-Solution:
+Bug: was detected in the terminal, in the problems section only. Although not interrupting the programme flow, it was worth fixing to have cleaner code and fewer error messages
 
-- Budget bug
+Cause: unnecessary usage of f-string
+
+Solution: the letter 'f' is removed from the corresponding print() statement without string literals
+
+---
+
+*Budget bug*
 
 <img width="100%" alt="bug" src="assets/bug_budget.jpg">
 
-Bug:
-Cause:
-Solution:
+Bug: at this point of the code running the terminal does not know the month_number variable because it will be defined later.
 
+Cause: the setting budget decision was initially placed at the introduction inside the main menu and then moved to be related to the chosen month menu. Option (B)UDGET accidentally stayed within the main menu. However, when the new user hit 'B(b)', there was nothing to display.
+Although seemingly connected to the variable definition issue, the true problem lies in programme flow in general.
+
+Solution: The bug was solved simply by removing the (B)UDGET option from the main menu.
+
+---
 
 ## Deployment
 
