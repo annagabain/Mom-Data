@@ -91,9 +91,9 @@ def intro_title():
     """
     Runs when the programme starts
     """
-    print("\n=========   Hello and welcome to MOM DATA   =========\n")
-    print("Here you can get insights about your monthly expenses\n")
-    print("=====================================================\n")
+    print("\n  =========   Hello and welcome to MOM DATA   =========\n")
+    print("  Here you can get insights about your monthly expenses\n")
+    print("  =====================================================\n")
     print()
 
     main_menu()
