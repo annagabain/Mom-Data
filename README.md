@@ -1,11 +1,11 @@
 # Mom Data
-## Budget Analysing Tool for the Whole Family
+## Budget Analysis Tool for the Whole Family
 
-Mom Data is a user-freindly application for storing, retrieveing and calculating major life expense categories: Food, Transport, Accomodation and Clothing. Mom Data is for family budget keepers. It aims to provide a clear overview on their monthly expenses thorough the year. 
+Mom Data is a user-friendly application for storing, retrieving and calculating major life expense categories: Food, Transport, Accommodation and Clothing. Mom Data is for family budget keepers. It aims to provide a clear overview of their monthly expenses throughout the year. 
 
-The application populates a database from user input, calculates the sum of the monthly expenses and compares it to the given budget. It gives a clear user guidance and feedback about the inputs, checks the data to be valid and that the programme flows uninterupted until the user choses to end it.
+The application populates a database from user input, calculates the sum of the monthly expenses and compares it to the given budget. It gives clear user guidance and feedback about the inputs, checks the data to be valid and that the programme flows uninterrupted until the user chooses to end it.
 
-This is the third Portfolio Project in frames of Code Institute Full Stack Web Developer Course Assessment. It is for educational purposes, is developed in Python programming language, that runs in a command-line terminal that is visually presented through the Heroku platform. Further tools and languages will be implemented for the consequent projects.
+This is the third Portfolio Project in frames of the Code Institute Full Stack Web Developer Course Assessment. It is for educational purposes and developed in Python programming language, which runs in a command-line terminal that is visually presented through the Heroku platform. Further tools and languages will be implemented for the consequent projects.
 
 :point_down: Click the link below for the live view: 
 
@@ -15,6 +15,7 @@ This is the third Portfolio Project in frames of Code Institute Full Stack Web D
 
 
 ## Contents:
+- [UX](#ux)
 - [Features](#features)
     - [Future Features](#future-features)
 - [Development Stages](#development-stages)
@@ -26,7 +27,11 @@ This is the third Portfolio Project in frames of Code Institute Full Stack Web D
     - [Debugging](#debugging)
 - [Deployment](#deployment)
 - [Sources & Credits](#sources-and-credits)
-- [Acknowledgemts](#acknowledgements)
+- [Acknowledgments](#acknowledgments)
+
+## UX
+
+The application is intended, foremost for mothers that keep the family budget. However, it is suitable for wide audiences, practically everyone who is willing to document and keep track of their periodic life expenses. Mom Data is intuitive to use and guides the user through the process with input validations and recurring main menu. The project is kept simple to make sure the users can dedicate very little time and achieve desired results. A very important feature, especially for working mothers with children.
 
 ## Features
 - Welcoming introduction
@@ -51,14 +56,22 @@ This is the third Portfolio Project in frames of Code Institute Full Stack Web D
 
 ### Future Features:
 
-- Each user should be able to create their own worksheet, with some pre-populated data to edit
-- additional to standard expenses, custom categories can be added. Standard categories can be edited or removed
+- Each user should be able to create their worksheet, with some pre-populated data to edit
+- additional to standard expenses, and custom categories can be added. Standard categories can be edited or removed
 - Downloading and saving the current data possible
 
 <img width="100%" alt="cat is not a number" src="assets/future_features_1.jpg">
 
 
 ## Development Stages
+Document the rationale as to why a particular library/libraries are necessary for the implementation of the project.
+Pandas
+
+Pandas is a Python library.
+
+Pandas is used to analyze data.
+
+Gspread
 
 ### Structure
 
@@ -74,11 +87,11 @@ This is the third Portfolio Project in frames of Code Institute Full Stack Web D
 
 ## Testing
 
-No automated testing has been used on this project, i have opted to do all testing manually and through numerous user experiences.
+No automated testing has been used on this project, I have opted to do all testing manually and through numerous user experiences.
 
 Method:
 Test:
-Resullt:
+Result:
 
 ### Validators
 
@@ -123,7 +136,7 @@ Budget bug
 
 Playing on a Local machine or via Gitpod Terminal:
 
-This project was developed by forking a specialized Code Institute template which simulates a terminal in the web browser. Due to this, I optimized the game to work via the final Heroku deployment, and I do not recommend playing it locally. That said, I have included this section to give you a choice.
+This project was developed by forking a specialized Code Institute template that simulates a terminal in the web browser. Due to this, I optimized the game to work via the final Heroku deployment, and I do not recommend playing it locally. That said, I have included this section to give you a choice.
 
     Navigate to the GitHub repository, and follow these steps to clone the project into your IDE of choice.
         Gitpod only requires you to have the web extension installed and click the green Gitpod button from the repositories main page. If you are using Gitpod please skip step 2 below as you do not require a virtual environment to protect your machine.
@@ -178,8 +191,8 @@ Global variables: https://www.w3schools.com/python/python_variables_global.asp
 
 Flowchart: https://lucid.app/
 
-## Acknowledgemts
+## Acknowledgments
 
 Richard Wells - course mentor for friendly guidance, help with refactoring some code and feedback on the project
 
-Jakob Lövhall - providing warm support, inculding babysitting most evenings to allow more time for the project
+Jakob Lövhall - providing warm support, including babysitting most evenings to allow more time for the project
