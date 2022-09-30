@@ -15,18 +15,20 @@ SHEET = GSPREAD_CLIENT.open('mom_expenses')
 
 # Open a sheet from a google API spreadsheet
 standard_worksheet = SHEET.worksheet("standard")
-months = ["January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"]
+months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+    ]
 
 
 def print_months():
@@ -44,23 +46,23 @@ def set_budget():
     Setting the monthly budget
     """
     while True:
-        print(f"Please set a Budget for {months[int(month_number) -1 ]},")
-        global budget
-        budget = input("e.g. 2500...\n\n")
+        print(f"Please set a Budget for {months[int(MONTH_NUMBER) -1 ]},")
+        global BUDGET
+        BUDGET = input("e.g. 2500...\n\n")
         print()
         try:
-            budget = int(budget)
-            print(f"Your budget of {budget} is confirmed")
+            BUDGET = int(BUDGET)
+            print(f"Your budget of {BUDGET} is confirmed")
             print()
             print()
         except ValueError:
-            print(f"{budget} is not a valid budget")
+            print(f"{BUDGET} is not a valid budget")
             print('Make sure you entered a number!')
             print()
             print("Try again...")
             continue
         return False
-    return budget
+    return BUDGET
 
 
 def main_menu():
@@ -105,30 +107,29 @@ def choose_month_menu():
     """
     worksheet = SHEET.worksheet("standard")
     while True:
-        # Choose the expense month...
         print("\nChoose the expense month,\ntype numbers 1 to 12...\n")
         print_months()
         print()
-        global month_number
-        month_number = input()
+        global MONTH_NUMBER
+        MONTH_NUMBER = input()
         print()
 
         try:
-            month_number = int(month_number)
+            MONTH_NUMBER = int(MONTH_NUMBER)
         except ValueError:
-            print(f"{month_number} is not a number")
+            print(f"{MONTH_NUMBER} is not a number")
             print('Make sure you entered a number!')
             print("Try again...")
             print()
             continue
 
-        if int(month_number) < 1 or int(month_number) > 12:
-            print(f"There is no month for number:  {month_number}")
+        if int(MONTH_NUMBER) < 1 or int(MONTH_NUMBER) > 12:
+            print(f"There is no month for number:  {MONTH_NUMBER}")
             print("Try again...")
             continue
 
-        result = worksheet.find(months[int(month_number)-1])
-        print(f"Chosen month: {months[int(month_number) -1 ]}\n")
+        result = worksheet.find(months[int(MONTH_NUMBER)-1])
+        print(f"Chosen month: {months[int(MONTH_NUMBER) -1 ]}\n")
         set_budget()
 
         return f"B{result.row}:E{result.row}"
@@ -139,7 +140,7 @@ def locate_the_budget_status_cell():
     Locate the budget status (budget-sum) cell 
     for the month that will be updated
     """
-    result = standard_worksheet.find(months[int(month_number)-1])
+    result = standard_worksheet.find(months[int(MONTH_NUMBER)-1])
     return f"H{result.row}"
 
 
@@ -147,7 +148,7 @@ def locate_the_budget_cell():
     """
     Locate the budget cell for the month that will be updated
     """
-    result = standard_worksheet.find(months[int(month_number)-1])
+    result = standard_worksheet.find(months[int(MONTH_NUMBER)-1])
     return f"G{result.row}"
 
 
@@ -155,7 +156,7 @@ def locate_the_sum_cell():
     """
     Finds the F cell of the corresponding month row
     """
-    monthly_sum_cell = standard_worksheet.find(months[int(month_number)-1])
+    monthly_sum_cell = standard_worksheet.find(months[int(MONTH_NUMBER)-1])
     return f"F{monthly_sum_cell.row}"
 
 
@@ -165,14 +166,13 @@ def update_monthly_sum():
     """
     print("Updating this month's sum...")
 
-    result = standard_worksheet.find(months[int(month_number)-1])
+    result = standard_worksheet.find(months[int(MONTH_NUMBER)-1])
     # Find indicidual cells
     cell_one = f"B{result.row}"
     cell_two = f"C{result.row}"
     cell_three = f"D{result.row}"
     cell_four = f"E{result.row}"
 
-    # Find each cell values
     val_one = standard_worksheet.acell(cell_one).value
     val_two = standard_worksheet.acell(cell_two).value
     val_three = standard_worksheet.acell(cell_three).value
@@ -193,13 +193,13 @@ def update_budget_status():
     """
     print("Updating the budget status...")
     monthly_sum = update_monthly_sum()
-    budget_status = budget - monthly_sum
+    budget_status = BUDGET - monthly_sum
 
     budget_status_cell = str(locate_the_budget_status_cell())
     budget_cell = str(locate_the_budget_cell())
     
     standard_worksheet.update(budget_status_cell, budget_status)
-    standard_worksheet.update(budget_cell, budget)
+    standard_worksheet.update(budget_cell, BUDGET)
 
     return budget_status
 
@@ -218,10 +218,9 @@ def update_expenses():
     while True:
         print("Insert 4 numbers, separated by commas,")
         print("for Food, Transport, Accomodation, Clothing... \n")
-        
+
         four_expense_values = input()
         try:
-            # four_expense_values = int(four_expense_values)
             input_two = four_expense_values.split(",")
 
             if len(input_two) != 4:
@@ -242,15 +241,13 @@ def update_expenses():
         worksheet.update(cells, [input_two])
         update_budget_status()
         print("Expenses updated successfully.\n")
-        # return False
         main_menu()
 
 
 def view_expenses():
     """
-    View the existing expenses
+    View the existing expenses at google  API spreadsheet
     """
-    # my 'standard' expenses data from google  API spreadsheet
     print()
     print("------------------------------------------------------------------")
     print("    Year's Expenses overview: ")
