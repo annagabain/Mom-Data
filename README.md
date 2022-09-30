@@ -30,29 +30,46 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
 - [Acknowledgments](#acknowledgments)
 
 ## UX
+(User Experience)
 
 The application is intended, foremost for mothers that keep the family budget. However, it is suitable for wide audiences, practically everyone who is willing to document and keep track of their periodic life expenses. Mom Data is intuitive to use and guides the user through the process with input validations and recurring main menu. The project is kept simple to make sure the users can dedicate very little time and achieve desired results. A very important feature, especially for working mothers with children.
 
 ## Features
-- Welcoming introduction
+
+### Welcoming introduction
+
+Mom Data app starts with greeting the user and a short description of its purpose: Here you can get insights about your monthly expenses.
 
 <img width="100%" alt="Main Menu" src="assets/main_menu.jpg">
 
-- Main menu
-    - VIEW
-    - ADD
-    - EXIT
+### Main menu
 
-- View the year's overview
+The recurring main menu encourages the user to choose between the three menu options, by typing merely the initials of the words:
+
+VIEW
+
+ADD
+
+EXIT
+
+- Upon typing the letter V (or v, that is accepted by the programme as well), the user immediately sees the current table demonstrating the year's expenses overview. The data is already saved during the previous inputs.
 
 <img width="100%" alt="expenses table" src="assets/view.jpg">
 
-- Add monthly expenses for a specific month (choose from the menu), if existing, update data for that month
+To continue with the application, the main menu again offers to choose between the categories view, add and exit.
 
-- Cat is not a number! ... User input validation
+- To add new expenses, the user simply enters A (or a). The menu asks to choose an expense month by typing the corresponding numbers. Here it is important to make sure the input leads to the correct location in the database. So if the user enters a wrong number, that does not represent any month, the app will encourage trying over and over again until a specific month is chosen.
 
+Cat is not a number! ... User input validation
 
 <img width="50%" alt="cat is not a number" src="assets/user_input_test_nan.jpg">
+
+Upon choosing the desired month, Mom Data would like to know the budget to compare the expenses with. The user input updates the expenses for that month.
+
+<img width="100%" alt="add expenses screenshot" src="assets/add_budget_and_expenses.jpg">
+After a successful update, the user can choose to view the current expense data, including the recent input, add new expenses, or simply exit the programme.
+
+- Exiting the app is easy and requires typing the initial E(or e). A friendly and concise **'Goodbye'** message signals the current budgeting session has been closed.
 
 ### Future Features:
 
