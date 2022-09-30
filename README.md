@@ -25,7 +25,7 @@ This is the third Portfolio Project in frames of the Code Institute Full Stack W
     - [Future Features](#future-features)
 - [Development Stages](#development-stages)
     - [Planning](#initial-planning)
-    - [Structure](#structure-flowchart)
+    - [Structure](#structure)
     - [Using Libraries](#using-libraries)
 - [Testing](#testing)
     - [Validators](#validators)
@@ -120,65 +120,90 @@ Some functions contain the main content of the app (e.g. main_menu, update_expen
 <img width="50%" alt="Mom Data Structure" src="assets/structure.jpg">
 
 
-
 ### Using Libraries
 
-Document the rationale as to why a particular library/libraries are necessary for the implementation of the project.
-Pandas
+Pandas library was necessary for the implementation of the project. Pandas is a Python library that is used to analyze data. In Mom Data it is used to display the expenses table in a visually appealing way to the user.
 
-Pandas is a Python library.
-
-Pandas is used to analyze data.
-
-Gspread
+Gspread is a Python API for Google Sheets, which was used to store and retrieve the data of the application.
 
 
 ## Testing
+### Manual testing
 
-No automated testing has been used on this project, I have opted to do all testing manually and through numerous user experiences.
+The testing for this project was done mostly manually, by countless attempts to establish a smooth flow and running the programme over and over again to test the functionality. A 'try breaking it' method proved to be especially effective for user input validation. 
 
-Method:
-Test:
-Result:
+Deliberately inputted false data, 'bullet proved' the application to be prone to sudden interruption. 
+
+<img width="100%" alt="testing in the terminal" src="assets/manual_testing.jpg">
+
+Method: 'breaking' by false input, then adding functions to prevent it 
+
+Test: running the app after each major change (e.g. new function)
+
+Result: uninterrupted programme flow and error communication with the user
+
+---
+
+Method: print() method is used both to communicate with the user as well as check and test data bit by bit for revealing information, such as data types, values and locating code.
+
+Test: put a print() statement at the code breakpoints to catch the error before it occurs.
+
+Result: After finding the desired solution, the print() statement is removed.
+
+---
+Method: Terminal errors and problems indicate the code line that is to be fixed.
+
+Test: go to the line seen in the error message and fix it manually or with the above-mentioned print() statement.
+
+Result: it took several to one attempts to eliminate the error messages and continue running the programme.
+
 
 ### Validators
 
-PEP8
+- PEP8
 
 <img width="100%" alt="screenshot with PEP8 issue" src="assets/pep_issue.jpg">
 
 <img width="100%" alt="screenshot with PEP8 problems" src="assets/pep8_check.jpg">
 
 
-### Manual testing
-
-<img width="100%" alt="testing in the terminal" src="assets/manual_testing.jpg">
-
 ### Debugging
+
+- Traceback error in the terminal
+
+<img width="100%" alt="bug months" src="assets/bug_months.jpg">
 
 Bug:
 Cause:
 Solution:
 
-Traceback error in the terminal
-
-<img width="100%" alt="bug months" src="assets/bug_months.jpg">
-
-Months menu bug
+- Months menu bug
 
 <img width="100%" alt="bug" src="assets/bug_month_number.jpg">
+
+Bug:
+Cause:
+Solution:
 
 <img width="100%" alt="bug" src="assets/bug_month_number_fixed.jpg">
 
 
-
-F-string bugs
+- F-string bugs
 
 <img width="100%" alt="bug" src="assets/bug_f_string.jpg">
 
-Budget bug
+Bug:
+Cause:
+Solution:
+
+- Budget bug
 
 <img width="100%" alt="bug" src="assets/bug_budget.jpg">
+
+Bug:
+Cause:
+Solution:
+
 
 ## Deployment
 
