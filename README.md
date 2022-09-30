@@ -112,6 +112,8 @@ Later on, during the project development, it became evident the usage of budget 
 
 ### Structure
 
+*Final Flowchart*
+
 <img width="100%" alt="Mom Data Structure Flowchart" src="assets/mom_data_lucidchart_final.png">
 
 The Python code is written in Gitpod integrated VSCode editor, run.py file. Right after initializing necessary dependencies, global variables and libraries, the 12 project functions lign-up one after the other to provide Mom Data with structured code.
@@ -164,6 +166,17 @@ Test: go to the line seen in the error message and fix it manually or with the a
 Result: it took several attempts to eliminate the error messages and continue running the programme.
 
 ---
+
+*Database and Server Side Testing*
+
+<img width="100%" alt="Sum function" src="assets/sum_function.jpg">
+
+The cells to place the values of the inputs were identified and located using Gspread methods described in the official documentation: https://docs.gspread.org/en/latest/user-guide.html
+
+Storing the data results was tested by looking up the table in Google sheets and manually calculating the sum of the values as well as the budget status samples.
+
+<img width="100%" alt="testing gspread" src="assets/table_test.jpg">
+
 
 ### Validators
 
@@ -266,6 +279,8 @@ How to use Pandas: https://datatofish.com/read_excel/
 How to Use Google Sheets With Python (2022): https://www.youtube.com/watch?v=bu5wXjz2KvU
 
 Gspread for the project: https://github.com/annagabain/love-sandwiches-walkthrough from Code Institute
+
+Gspread documentation: https://docs.gspread.org/en/latest/user-guide.html
 
 Creating the worksheet on: https://docs.google.com/
 
