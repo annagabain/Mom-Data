@@ -118,9 +118,13 @@ def choose_month_menu():
         except ValueError:
             print(f"{month_number} is not a number")
             print('Make sure you entered a number!')
-            print()
             print("Try again...")
             print()
+            continue
+
+        if int(month_number) < 1 or int(month_number) > 12:
+            print(f"There is no month for number:  {month_number}")
+            print("Try again...")
             continue
 
         result = worksheet.find(months[int(month_number)-1])

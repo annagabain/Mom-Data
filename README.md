@@ -85,6 +85,14 @@ Traceback error in the terminal
 
 <img width="100%" alt="bug months" src="assets/bug_months.jpg">
 
+Months menu bug
+
+<img width="100%" alt="bug" src="assets/bug_month_number.jpg">
+
+<img width="100%" alt="bug" src="assets/bug_month_number_fixed.jpg">
+
+
+
 F-string bugs
 
 <img width="100%" alt="bug" src="assets/bug_f_string.jpg">
