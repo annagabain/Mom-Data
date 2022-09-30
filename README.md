@@ -97,14 +97,18 @@ Initially, the main expense categories (Food, Transport, Accommodation, Clothing
 
 <img width="70%" alt="Mom Data Initial Structure Flowchart" src="assets/Mom_Data_Lucidchart_old.png">
 
-Later on, during the project development, it became evident the use of budget comparison was connected to a specific month, and the app flow changed accordingly.
+Later on, during the project development, it became evident the usage of budget comparison was connected to a specific month, and the app flow changed accordingly.
 
 
 ### Structure
 
 <img width="100%" alt="Mom Data Structure Flowchart" src="assets/mom_data_lucidchart_final.png">
 
-Main functions
+The Python code is written in Gitpod integrated VSCode editor, run.py file. Right after initializing necessary dependencies, global variables and libraries, the 12 project functions lign-up one after the other to provide Mom Data with structured code.
+
+Some functions contain the main content of the app (e.g. main_menu, update_expenses), whereas the others supply them with 'tools' to work with (e.g. locate_the_budget_cell, print_months, etc.)
+
+*The 12 functions of the project*
 
 <img width="50%" alt="Mom Data Structure" src="assets/structure.jpg">
 
